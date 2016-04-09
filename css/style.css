@@ -1641,29 +1641,56 @@ section.comment {
   -ms-transition: color 0.5s;
   transition: color 0.5s;
 }
+.category-block>ul>li {
+  border-bottom: 1px solid #ccc;
+}
+.category-block li {
+  margin-bottom: 8px;
+}
 @media only screen and (min-width: 768px) {
-  .categorieslist {
+  .category-list {
     width: 45%;
     float: left;
     margin: 0 5% 0 0;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .categorieslist {
+  .category-list {
     width: 100%;
     float: none;
-    margin: 1em 0 0;
+    margin: 0.5em 0 0;
   }
 }
-.categorieslist li {
-  border-bottom: 1px solid #ccc;
-}
-.categorieslist li a {
-  display: block;
+.category-list .categoriy-list-item {
   padding: 0.5em 5%;
 }
-.categorieslist li a:hover {
-  color: #ff7256;
+.category-list .category-list-count {
+  top: -0.5em;
+  padding-left: 0.3em;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.category-list ul,
+.category-list ol,
+.category-list dl {
+  list-style: none;
+}
+.category-list ul,
+.category-list ol,
+.category-list dl {
+  background-color: #f9f9fa;
+  margin-left: 20px;
+}
+.category-list ul li,
+.category-list ol li,
+.category-list dl li {
+  border-bottom: 1px dashed #ccc;
+}
+.category-list .category-list-child {
+  border-top: 1px dashed #ccc;
+  margin-bottom: 8px;
 }
 .tagslist {
   margin: 1em 0 0;
