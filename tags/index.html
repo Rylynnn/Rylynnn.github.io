@@ -1,13 +1,16 @@
 
- <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html lang="English/Chinese">
 <head>
   <meta charset="UTF-8">
   
-    <title>tags | Rylynno</title>
+    <title>Rylynno</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Rylynno">
+    
+    <meta name="description" content="layout: tagstitle: tags">
     
     
     
@@ -22,9 +25,9 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
-    <body>
-      <header>
-        <div>
+      <body>
+        <header>
+          <div>
 		
 			<div id="imglogo">
 				<a href="/"><img src="/img/logo.svg" alt="Rylynno" title="Rylynno"/></a>
@@ -56,22 +59,71 @@
 			</nav>			
 </div>
 
-      </header>
-      <div id="container">
-          
-<div class="archive-title" >
-<h2 class="tag-icon">標簽</h2>
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/tags/index.html" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="Rylynno">Rylynno</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-04-09T18:18:55.452Z" itemprop="datePublished">2016-04-10</time>
+    更新日期:<time datetime="2016-04-09T18:18:55.452Z" itemprop="dateModified">2016-04-10</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<p>layout: tags<br>title: tags </p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/tags/index.html" data-title="Rylynno" data-tsina="null" class="share clearfix">
+  </div>
 
 </div>
-<div id="main" class="archive-part">
-<div class="all-list-box"></div>
+</footer>   	       
+	</article>
+	
+	
+</div>  
+        </div>
+        <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="Rylynno">Rylynno</a>
+		
+		</p>
 </div>
-
-
-
-
-      </div>
-      <script src="/js/jquery-2.1.0.min.js"></script>
+</footer>
+        <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -118,28 +170,39 @@ $(document).ready(function(){
 </script>
 
 
-
-
 <script type="text/javascript">
 $(document).ready(function(){ 
-  var list    = $('.archive-title a'),
-      box     = $('.all-list-box'),
-      first   = $('.archive-title a:first-of-type');
-      box.load(first.attr('data-src').toString()+' #archive-page');
-      first.addClass('current');
-  list.each(function(){
-    $(this).click(function(){
-      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
-      box.load(listSrc);
-      list.removeClass('current');
-      $(this).addClass('current');
-     });  
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
     });
-  }); 
+  });
+});     
 </script>
 
 
 
 
-    </body>
-   </html>
+
+
+      </body>
+     </html>
+     
