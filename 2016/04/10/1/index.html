@@ -13,26 +13,23 @@
     
     <meta name="description" content="原题
 题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
-##分析
-区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
-1234567891011121314151617181920212">
+分析区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
+1234567891011121314151617181920212223">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU4970 Killing Monsters">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/1/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
 题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
-##分析
-区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
-1234567891011121314151617181920212">
-<meta property="og:updated_time" content="2016-04-10T14:51:59.450Z">
+分析区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
+1234567891011121314151617181920212223">
+<meta property="og:updated_time" content="2016-04-10T15:30:46.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU4970 Killing Monsters">
 <meta name="twitter:description" content="原题
 题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
-##分析
-区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
-1234567891011121314151617181920212">
+分析区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
+1234567891011121314151617181920212223">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -108,14 +105,13 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
 		
 		</div>
 		
 		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4970" target="_blank" rel="external">原题</a></p>
 <h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死</p>
-<p>##分析</p>
-<p>区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">树状数组，区间更新</span><br><span class="line">wa1:sum[]没有清空。。。以及h应该用long long</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">100007</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum[<span class="number">100007</span>],c[<span class="number">100007</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> bit,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(bit&lt;=N)&#123;</span><br><span class="line">        c[bit]+=a;</span><br><span class="line">        bit+=lowbit(bit);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">getsum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum+=c[x];</span><br><span class="line">        x-=lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,l,r,d,k,x;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans,h;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(c,<span class="number">0</span>,<span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="built_in">memset</span>(sum,<span class="number">0</span>,<span class="keyword">sizeof</span>(sum));</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;l,&amp;r,&amp;d);</span><br><span class="line">            update(l,d);<span class="comment">//区间更新为容斥</span></span><br><span class="line">            update(r+<span class="number">1</span>,-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;<span class="number">0</span>;i--)&#123;<span class="comment">//预处理出每一个点到终点的所有伤害值</span></span><br><span class="line">            sum[i]=sum[i+<span class="number">1</span>]+getsum(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%I64d%d"</span>,&amp;h,&amp;x);</span><br><span class="line">            <span class="keyword">if</span>(h&gt;sum[x])&#123;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
@@ -170,7 +166,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
  
   </div>
 

@@ -12,30 +12,24 @@
 
     
     <meta name="description" content="原题
-##题意
-对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
-##分析
-直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
-1234567891011121314151617181920212223242526272829303132333">
+题意对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
+分析直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
+1234567891011121314151617181920212223242526272829303132333435363">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU-4965 Fast Matrix Calculation">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/3/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
-##题意
-对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
-##分析
-直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
-1234567891011121314151617181920212223242526272829303132333">
-<meta property="og:updated_time" content="2016-04-10T15:15:13.357Z">
+题意对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
+分析直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
+1234567891011121314151617181920212223242526272829303132333435363">
+<meta property="og:updated_time" content="2016-04-10T15:30:42.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU-4965 Fast Matrix Calculation">
 <meta name="twitter:description" content="原题
-##题意
-对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
-##分析
-直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
-1234567891011121314151617181920212223242526272829303132333">
+题意对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
+分析直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
+1234567891011121314151617181920212223242526272829303132333435363">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -111,15 +105,13 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
 		
 		</div>
 		
 		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4965" target="_blank" rel="external">原题</a></p>
-<p>##题意</p>
-<p>对两个最大6<em>1000的矩阵A,B，做(A</em>B)^(N*N)%6处理，然后求新矩阵的所有元素的和。</p>
-<p>##分析</p>
-<p>直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。</p>
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>对两个最大6<em>1000的矩阵A,B，做(A</em>B)^(N*N)%6处理，然后求新矩阵的所有元素的和。</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">由于矩阵太大，函数返回矩阵的话oj直接判CE，只能用全局变量</span><br><span class="line">T:mul()函数的变量没设置对</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">1001</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">struct</span> matrix&#123;</span><br><span class="line">    <span class="keyword">int</span> x[N][N];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="built_in">memset</span>(x,<span class="number">0</span>,<span class="keyword">sizeof</span>(x));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;tmp,ppp,a,b,c;</span><br><span class="line"><span class="keyword">int</span> mm;</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(matrix&amp; a,<span class="keyword">int</span> ab,matrix&amp; b,<span class="keyword">int</span> bb,<span class="keyword">int</span> tmpb,<span class="keyword">int</span> MOD)</span></span>&#123;</span><br><span class="line">    tmp.clear();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ab;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;bb;j++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;tmpb;k++)&#123;</span><br><span class="line">                tmp.x[i][j]=(tmp.x[i][j]+a.x[i][k]*b.x[k][j])%MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">power</span><span class="params">(matrix&amp; a,<span class="keyword">int</span> n,<span class="keyword">int</span> MOD)</span></span>&#123;</span><br><span class="line">    ppp.clear();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        ppp.x[i][i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>((n&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">            mul(ppp,k,a,k,k,mm);</span><br><span class="line">            ppp=tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        mul(a,k,a,k,k,mm);</span><br><span class="line">        a=tmp;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    mm=<span class="number">6</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k),n!=<span class="number">0</span>&amp;&amp;k!=<span class="number">0</span>)&#123;</span><br><span class="line">        a.clear();</span><br><span class="line">        b.clear();</span><br><span class="line">        c.clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;j++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a.x[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b.x[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        mul(b,k,a,k,n,mm);</span><br><span class="line">        c=tmp;</span><br><span class="line">        power(c,n*n-<span class="number">1</span>,mm);</span><br><span class="line">        c=ppp;</span><br><span class="line">        mul(a,n,c,n,k,mm);</span><br><span class="line">        c=tmp;</span><br><span class="line">        mul(c,n,b,n,k,mm);</span><br><span class="line">        c=tmp;</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                ans+=c.x[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
@@ -182,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
  
   </div>
 
