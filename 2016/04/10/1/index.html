@@ -12,24 +12,21 @@
 
     
     <meta name="description" content="原题
-##Killing Monsters
-Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
-###Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towe">
+Killing MonstersTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
+Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towers to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU4970 Killing Monsters">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/1/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
-##Killing Monsters
-Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
-###Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towe">
-<meta property="og:updated_time" content="2016-04-10T14:26:04.002Z">
+Killing MonstersTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
+Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towers to">
+<meta property="og:updated_time" content="2016-04-10T14:31:15.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU4970 Killing Monsters">
 <meta name="twitter:description" content="原题
-##Killing Monsters
-Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
-###Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towe">
+Killing MonstersTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
+Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towers to">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -105,29 +102,24 @@ Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Ot
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Killing_Monsters"><span class="toc-number">1.</span> <span class="toc-text">Killing Monsters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem_Description"><span class="toc-number">1.1.</span> <span class="toc-text">Problem Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Input"><span class="toc-number">1.4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Output"><span class="toc-number">1.5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hint"><span class="toc-number">1.6.</span> <span class="toc-text">Hint</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4970" target="_blank" rel="external">原题</a></p>
-<p>##Killing Monsters</p>
-<p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
-<p>###Problem Description<br>Kingdom Rush is a popular TD game, in which you should build some towers to protect your kingdom from monsters. And now another wave of monsters is coming and you need again to know whether you can get through it.</p>
+<h2 id="Killing_Monsters"><a href="#Killing_Monsters" class="headerlink" title="Killing Monsters"></a>Killing Monsters</h2><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
+<h3 id="Problem_Description"><a href="#Problem_Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p>Kingdom Rush is a popular TD game, in which you should build some towers to protect your kingdom from monsters. And now another wave of monsters is coming and you need again to know whether you can get through it.</p>
 <p>The path of monsters is a straight line, and there are N blocks on it (numbered from 1 to N continuously). Before enemies come, you have M towers built. Each tower has an attack range [L, R], meaning that it can attack all enemies in every block i, where L&lt;=i&lt;=R. Once a monster steps into block i, every tower whose attack range include block i will attack the monster once and only once. For example, a tower with attack range [1, 3] will attack a monster three times if the monster is alive, one in block 1, another in block 2 and the last in block 3.</p>
 <p>A witch helps your enemies and makes every monster has its own place of appearance (the ith monster appears at block Xi). All monsters go straightly to block N.</p>
 <p>Now that you know each monster has HP Hi and each tower has a value of attack Di, one attack will cause Di damage (decrease HP by Di). If the HP of a monster is decreased to 0 or below 0, it will die and disappear.<br>Your task is to calculate the number of monsters surviving from your towers so as to make a plan B.</p>
-<p>###Input<br>The input contains multiple test cases.</p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The input contains multiple test cases.</p>
 <p>The first line of each case is an integer N (0 &lt; N &lt;= 100000), the number of blocks in the path. The second line is an integer M (0 &lt; M &lt;= 100000), the number of towers you have. The next M lines each contain three numbers, Li, Ri, Di (1 &lt;= Li &lt;= Ri &lt;= N, 0 &lt; Di &lt;= 1000), indicating the attack range [L, R] and the value of attack D of the ith tower. The next line is an integer K (0 &lt; K &lt;= 100000), the number of coming monsters. The following K lines each contain two integers Hi and Xi (0 &lt; Hi &lt;= 10^18, 1 &lt;= Xi &lt;= N) indicating the ith monster’s live point and the number of the block where the ith monster appears.</p>
 <p>The input is terminated by N = 0.</p>
-<p>###Output<br>Output one line containing the number of surviving monsters.</p>
-<p>###Sample Input<br>5<br>2<br>1 3 1<br>5 5 2<br>5<br>1 3<br>3 1<br>5 2<br>7 3<br>9 1<br>0</p>
-<p>###Sample Output<br>3</p>
-<p>###Hint<br>In the sample, three monsters with origin HP 5, 7 and 9 will survive.</p>
-<p>‘/<em><br>树状数组，区间更新<br>wa1:sum[]没有清空。。。以及h应该用long long
-</em>/</p>
-<p>#include <bits stdc++.h=""></bits></p>
-<p>#define N 100007<br>using namespace std;<br>long long sum[100007],c[100007];<br>int lowbit(int x){<br>    return x&amp;(-x);<br>}<br>void update(int bit,int a){<br>    while(bit&lt;=N){<br>        c[bit]+=a;<br>        bit+=lowbit(bit);<br>    }<br>}<br>long long getsum(int x){<br>    long long sum=0;<br>    while(x&gt;0){<br>        sum+=c[x];<br>        x-=lowbit(x);<br>    }<br>    return sum;<br>}<br>int main()<br>{<br>    int n,m,l,r,d,k,x;<br>    long long ans,h;<br>    while(scanf(“%d%d”,&amp;n,&amp;m)!=EOF&amp;&amp;n!=0){<br>        memset(c,0,sizeof(c));<br>        memset(sum,0,sizeof(sum));<br>        ans=0;<br>        for(int i=0;i<m;i++){ scanf("%d%d%d",&l,&r,&d);="" update(l,d);="" 区间更新为容斥="" update(r+1,-d);="" }="" for(int="" i="n;i">0;i–){//预处理出每一个点到终点的所有伤害值<br>            sum[i]=sum[i+1]+getsum(i);<br>        }<br>        scanf(“%d”,&amp;k);<br>        ans=0;<br>        for(int i=0;i<k;i++){ scanf("%i64d%d",&h,&x);="" if(h="">sum[x]){<br>                ans++;<br>            }<br>        }<br>        printf(“%I64d\n”,ans);<br>    }<br>    return 0;<br>}<br>‘</k;i++){></m;i++){></p>
-  
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Output one line containing the number of surviving monsters.</p>
+<h3 id="Sample_Input"><a href="#Sample_Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><p>5<br>2<br>1 3 1<br>5 5 2<br>5<br>1 3<br>3 1<br>5 2<br>7 3<br>9 1<br>0</p>
+<h3 id="Sample_Output"><a href="#Sample_Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><p>3</p>
+<h3 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h3><p>In the sample, three monsters with origin HP 5, 7 and 9 will survive.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#26641;&#29366;&#25968;&#32452;&#65292;&#21306;&#38388;&#26356;&#26032;&#10;wa1:sum[]&#27809;&#26377;&#28165;&#31354;&#12290;&#12290;&#12290;&#20197;&#21450;h&#24212;&#35813;&#29992;long long&#10;*/&#10;#include &#60;bits/stdc++.h&#62;&#10;#define N 100007&#10;using namespace std;&#10;long long sum[100007],c[100007];&#10;int lowbit(int x)&#123;&#10;    return x&#38;(-x);&#10;&#125;&#10;void update(int bit,int a)&#123;&#10;    while(bit&#60;=N)&#123;&#10;        c[bit]+=a;&#10;        bit+=lowbit(bit);&#10;    &#125;&#10;&#125;&#10;long long getsum(int x)&#123;&#10;    long long sum=0;&#10;    while(x&#62;0)&#123;&#10;        sum+=c[x];&#10;        x-=lowbit(x);&#10;    &#125;&#10;    return sum;&#10;&#125;&#10;int main()&#10;&#123;&#10;    int n,m,l,r,d,k,x;&#10;    long long ans,h;&#10;    while(scanf(&#34;%d%d&#34;,&#38;n,&#38;m)!=EOF&#38;&#38;n!=0)&#123;&#10;        memset(c,0,sizeof(c));&#10;        memset(sum,0,sizeof(sum));&#10;        ans=0;&#10;        for(int i=0;i&#60;m;i++)&#123;&#10;            scanf(&#34;%d%d%d&#34;,&#38;l,&#38;r,&#38;d);&#10;            update(l,d);//&#21306;&#38388;&#26356;&#26032;&#20026;&#23481;&#26021;&#10;            update(r+1,-d);&#10;        &#125;&#10;        for(int i=n;i&#62;0;i--)&#123;//&#39044;&#22788;&#29702;&#20986;&#27599;&#19968;&#20010;&#28857;&#21040;&#32456;&#28857;&#30340;&#25152;&#26377;&#20260;&#23475;&#20540;&#10;            sum[i]=sum[i+1]+getsum(i);&#10;        &#125;&#10;        scanf(&#34;%d&#34;,&#38;k);&#10;        ans=0;&#10;        for(int i=0;i&#60;k;i++)&#123;&#10;            scanf(&#34;%I64d%d&#34;,&#38;h,&#38;x);&#10;            if(h&#62;sum[x])&#123;&#10;                ans++;&#10;            &#125;&#10;        &#125;&#10;        printf(&#34;%I64d\n&#34;,ans);&#10;    &#125;&#10;    return 0;&#10;&#125;</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -181,7 +173,7 @@ Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Ot
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Killing_Monsters"><span class="toc-number">1.</span> <span class="toc-text">Killing Monsters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem_Description"><span class="toc-number">1.1.</span> <span class="toc-text">Problem Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Input"><span class="toc-number">1.4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Output"><span class="toc-number">1.5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hint"><span class="toc-number">1.6.</span> <span class="toc-text">Hint</span></a></li></ol></li></ol>
  
   </div>
 
