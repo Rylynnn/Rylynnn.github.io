@@ -12,21 +12,27 @@
 
     
     <meta name="description" content="原题
-Killing MonstersTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
-Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towers to">
+题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
+##分析
+区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
+1234567891011121314151617181920212">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU4970 Killing Monsters">
 <meta property="og:url" content="http://yoursite.com/2016/04/10/1/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
-Killing MonstersTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
-Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towers to">
-<meta property="og:updated_time" content="2016-04-10T14:31:15.972Z">
+题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
+##分析
+区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
+1234567891011121314151617181920212">
+<meta property="og:updated_time" content="2016-04-10T14:51:59.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU4970 Killing Monsters">
 <meta name="twitter:description" content="原题
-Killing MonstersTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)
-Problem DescriptionKingdom Rush is a popular TD game, in which you should build some towers to">
+题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
+##分析
+区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。
+1234567891011121314151617181920212">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -102,24 +108,15 @@ Problem DescriptionKingdom Rush is a popular TD game, in which you should build 
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Killing_Monsters"><span class="toc-number">1.</span> <span class="toc-text">Killing Monsters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem_Description"><span class="toc-number">1.1.</span> <span class="toc-text">Problem Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Input"><span class="toc-number">1.4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Output"><span class="toc-number">1.5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hint"><span class="toc-number">1.6.</span> <span class="toc-text">Hint</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li></ol>
 		
 		</div>
 		
 		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4970" target="_blank" rel="external">原题</a></p>
-<h2 id="Killing_Monsters"><a href="#Killing_Monsters" class="headerlink" title="Killing Monsters"></a>Killing Monsters</h2><p>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 131072/131072 K (Java/Others)</p>
-<h3 id="Problem_Description"><a href="#Problem_Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p>Kingdom Rush is a popular TD game, in which you should build some towers to protect your kingdom from monsters. And now another wave of monsters is coming and you need again to know whether you can get through it.</p>
-<p>The path of monsters is a straight line, and there are N blocks on it (numbered from 1 to N continuously). Before enemies come, you have M towers built. Each tower has an attack range [L, R], meaning that it can attack all enemies in every block i, where L&lt;=i&lt;=R. Once a monster steps into block i, every tower whose attack range include block i will attack the monster once and only once. For example, a tower with attack range [1, 3] will attack a monster three times if the monster is alive, one in block 1, another in block 2 and the last in block 3.</p>
-<p>A witch helps your enemies and makes every monster has its own place of appearance (the ith monster appears at block Xi). All monsters go straightly to block N.</p>
-<p>Now that you know each monster has HP Hi and each tower has a value of attack Di, one attack will cause Di damage (decrease HP by Di). If the HP of a monster is decreased to 0 or below 0, it will die and disappear.<br>Your task is to calculate the number of monsters surviving from your towers so as to make a plan B.</p>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>The input contains multiple test cases.</p>
-<p>The first line of each case is an integer N (0 &lt; N &lt;= 100000), the number of blocks in the path. The second line is an integer M (0 &lt; M &lt;= 100000), the number of towers you have. The next M lines each contain three numbers, Li, Ri, Di (1 &lt;= Li &lt;= Ri &lt;= N, 0 &lt; Di &lt;= 1000), indicating the attack range [L, R] and the value of attack D of the ith tower. The next line is an integer K (0 &lt; K &lt;= 100000), the number of coming monsters. The following K lines each contain two integers Hi and Xi (0 &lt; Hi &lt;= 10^18, 1 &lt;= Xi &lt;= N) indicating the ith monster’s live point and the number of the block where the ith monster appears.</p>
-<p>The input is terminated by N = 0.</p>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Output one line containing the number of surviving monsters.</p>
-<h3 id="Sample_Input"><a href="#Sample_Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><p>5<br>2<br>1 3 1<br>5 5 2<br>5<br>1 3<br>3 1<br>5 2<br>7 3<br>9 1<br>0</p>
-<h3 id="Sample_Output"><a href="#Sample_Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><p>3</p>
-<h3 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h3><p>In the sample, three monsters with origin HP 5, 7 and 9 will survive.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#26641;&#29366;&#25968;&#32452;&#65292;&#21306;&#38388;&#26356;&#26032;&#10;wa1:sum[]&#27809;&#26377;&#28165;&#31354;&#12290;&#12290;&#12290;&#20197;&#21450;h&#24212;&#35813;&#29992;long long&#10;*/&#10;#include &#60;bits/stdc++.h&#62;&#10;#define N 100007&#10;using namespace std;&#10;long long sum[100007],c[100007];&#10;int lowbit(int x)&#123;&#10;    return x&#38;(-x);&#10;&#125;&#10;void update(int bit,int a)&#123;&#10;    while(bit&#60;=N)&#123;&#10;        c[bit]+=a;&#10;        bit+=lowbit(bit);&#10;    &#125;&#10;&#125;&#10;long long getsum(int x)&#123;&#10;    long long sum=0;&#10;    while(x&#62;0)&#123;&#10;        sum+=c[x];&#10;        x-=lowbit(x);&#10;    &#125;&#10;    return sum;&#10;&#125;&#10;int main()&#10;&#123;&#10;    int n,m,l,r,d,k,x;&#10;    long long ans,h;&#10;    while(scanf(&#34;%d%d&#34;,&#38;n,&#38;m)!=EOF&#38;&#38;n!=0)&#123;&#10;        memset(c,0,sizeof(c));&#10;        memset(sum,0,sizeof(sum));&#10;        ans=0;&#10;        for(int i=0;i&#60;m;i++)&#123;&#10;            scanf(&#34;%d%d%d&#34;,&#38;l,&#38;r,&#38;d);&#10;            update(l,d);//&#21306;&#38388;&#26356;&#26032;&#20026;&#23481;&#26021;&#10;            update(r+1,-d);&#10;        &#125;&#10;        for(int i=n;i&#62;0;i--)&#123;//&#39044;&#22788;&#29702;&#20986;&#27599;&#19968;&#20010;&#28857;&#21040;&#32456;&#28857;&#30340;&#25152;&#26377;&#20260;&#23475;&#20540;&#10;            sum[i]=sum[i+1]+getsum(i);&#10;        &#125;&#10;        scanf(&#34;%d&#34;,&#38;k);&#10;        ans=0;&#10;        for(int i=0;i&#60;k;i++)&#123;&#10;            scanf(&#34;%I64d%d&#34;,&#38;h,&#38;x);&#10;            if(h&#62;sum[x])&#123;&#10;                ans++;&#10;            &#125;&#10;        &#125;&#10;        printf(&#34;%I64d\n&#34;,ans);&#10;    &#125;&#10;    return 0;&#10;&#125;</span><br></pre></td></tr></table></figure>  
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死</p>
+<p>##分析</p>
+<p>区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从该点出发到终点的所有被攻击值，然后直接输出。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">树状数组，区间更新</span><br><span class="line">wa1:sum[]没有清空。。。以及h应该用long long</span><br><span class="line">*/</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">100007</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum[<span class="number">100007</span>],c[<span class="number">100007</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> bit,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(bit&lt;=N)&#123;</span><br><span class="line">        c[bit]+=a;</span><br><span class="line">        bit+=lowbit(bit);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">getsum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sum+=c[x];</span><br><span class="line">        x-=lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m,l,r,d,k,x;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans,h;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(c,<span class="number">0</span>,<span class="keyword">sizeof</span>(c));</span><br><span class="line">        <span class="built_in">memset</span>(sum,<span class="number">0</span>,<span class="keyword">sizeof</span>(sum));</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;l,&amp;r,&amp;d);</span><br><span class="line">            update(l,d);<span class="comment">//区间更新为容斥</span></span><br><span class="line">            update(r+<span class="number">1</span>,-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;<span class="number">0</span>;i--)&#123;<span class="comment">//预处理出每一个点到终点的所有伤害值</span></span><br><span class="line">            sum[i]=sum[i+<span class="number">1</span>]+getsum(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">        ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%I64d%d"</span>,&amp;h,&amp;x);</span><br><span class="line">            <span class="keyword">if</span>(h&gt;sum[x])&#123;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -156,9 +153,9 @@ Problem DescriptionKingdom Rush is a popular TD game, in which you should build 
  
 
 <div class="next">
-<a href="/2016/04/10/hello-world/"  title="Hello World">
+<a href="/2016/04/10/4/"  title="HDU-4961 Boring Sum">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>HDU-4961 Boring Sum
 </span>
 </a>
 </div>
@@ -173,7 +170,7 @@ Problem DescriptionKingdom Rush is a popular TD game, in which you should build 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Killing_Monsters"><span class="toc-number">1.</span> <span class="toc-text">Killing Monsters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem_Description"><span class="toc-number">1.1.</span> <span class="toc-text">Problem Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">1.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">1.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Input"><span class="toc-number">1.4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample_Output"><span class="toc-number">1.5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hint"><span class="toc-number">1.6.</span> <span class="toc-text">Hint</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li></ol>
  
   </div>
 
@@ -194,7 +191,7 @@ Problem DescriptionKingdom Rush is a popular TD game, in which you should build 
   
 <div class="category-block">
   <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Competition/">Competition</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Competition/Team/">Team</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Competition/Team/2014Muti/">2014Muti</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li></ul>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Competition/">Competition</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Competition/Team/">Team</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Competition/Team/2014Muti/">2014Muti</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Maths/">Maths</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Maths/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Maths/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
 </div>
 
 
@@ -204,11 +201,23 @@ Problem DescriptionKingdom Rush is a popular TD game, in which you should build 
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/HDU/" title="HDU">HDU<sup>1</sup></a></li>
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/矩阵快速幂/" title="矩阵快速幂">矩阵快速幂<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Binary-Indexed-Trees/" title="Binary Indexed Trees">Binary Indexed Trees<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
 			
 		
 		</ul>
