@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>HDU1241 Oil Deposits | Rylynnn</title>
+    <title>HDU4596 Yet another end of the world | Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Rylynnn">
@@ -12,24 +12,21 @@
 
     
     <meta name="description" content="原题
-题意油田为@，普通地为*,若一个@周围8个方位内还有@则为同一片油田，问总共多少个油田
-分析DFS，对整个矩阵进行爆搜，在整个矩阵中，遇到一个@，将当前@变为，油田数num++，然后由此开始dfs周围，对每遇到的一个@，将其变为，并继续dfs直到没有@回溯。
-1234567891011121314151617181920212223242526272829303132333435363738">
+题意有n个虫洞，每个虫洞有三个参数X、Y、Z，如果存在一个ID，可以使ID%X在[Y,Z]区间内，则这个虫洞将可以吸引飞船，但是，如果同时两个或者两个以上的虫洞可以吸引飞船，那么飞船将被撕碎，不能通过。
+分析由于我们的目的是：确定每两个虫洞的参数之间不存在一个ID，ID满足：Ax1+C=IDBX2+D=IDX1，X2是两个虫洞的X参数，C在Y1,Z1之间取值，D在Y2，Z2之间取值。然后，我">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU1241 Oil Deposits">
-<meta property="og:url" content="http://yoursite.com/2016/04/16/HDU1241/index.html">
+<meta property="og:title" content="HDU4596 Yet another end of the world">
+<meta property="og:url" content="http://yoursite.com/2016/04/22/HDU4596/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
-题意油田为@，普通地为*,若一个@周围8个方位内还有@则为同一片油田，问总共多少个油田
-分析DFS，对整个矩阵进行爆搜，在整个矩阵中，遇到一个@，将当前@变为，油田数num++，然后由此开始dfs周围，对每遇到的一个@，将其变为，并继续dfs直到没有@回溯。
-1234567891011121314151617181920212223242526272829303132333435363738">
-<meta property="og:updated_time" content="2016-04-15T19:52:09.723Z">
+题意有n个虫洞，每个虫洞有三个参数X、Y、Z，如果存在一个ID，可以使ID%X在[Y,Z]区间内，则这个虫洞将可以吸引飞船，但是，如果同时两个或者两个以上的虫洞可以吸引飞船，那么飞船将被撕碎，不能通过。
+分析由于我们的目的是：确定每两个虫洞的参数之间不存在一个ID，ID满足：Ax1+C=IDBX2+D=IDX1，X2是两个虫洞的X参数，C在Y1,Z1之间取值，D在Y2，Z2之间取值。然后，我">
+<meta property="og:updated_time" content="2016-04-25T18:05:41.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU1241 Oil Deposits">
+<meta name="twitter:title" content="HDU4596 Yet another end of the world">
 <meta name="twitter:description" content="原题
-题意油田为@，普通地为*,若一个@周围8个方位内还有@则为同一片油田，问总共多少个油田
-分析DFS，对整个矩阵进行爆搜，在整个矩阵中，遇到一个@，将当前@变为，油田数num++，然后由此开始dfs周围，对每遇到的一个@，将其变为，并继续dfs直到没有@回溯。
-1234567891011121314151617181920212223242526272829303132333435363738">
+题意有n个虫洞，每个虫洞有三个参数X、Y、Z，如果存在一个ID，可以使ID%X在[Y,Z]区间内，则这个虫洞将可以吸引飞船，但是，如果同时两个或者两个以上的虫洞可以吸引飞船，那么飞船将被撕碎，不能通过。
+分析由于我们的目的是：确定每两个虫洞的参数之间不存在一个ID，ID满足：Ax1+C=IDBX2+D=IDX1，X2是两个虫洞的X参数，C在Y1,Z1之间取值，D在Y2，Z2之间取值。然后，我">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -89,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/16/HDU1241/" title="HDU1241 Oil Deposits" itemprop="url">HDU1241 Oil Deposits</a>
+      <a href="/2016/04/22/HDU4596/" title="HDU4596 Yet another end of the world" itemprop="url">HDU4596 Yet another end of the world</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-15T19:40:00.000Z" itemprop="datePublished"> 发表于 2016-04-16</time>
+    <time datetime="2016-04-21T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-04-22</time>
     
   </p>
 </header>
@@ -109,24 +106,20 @@
 		
 		</div>
 		
-		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1241" target="_blank" rel="external">原题</a></p>
-<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>油田为@，普通地为*,若一个@周围8个方位内还有@则为同一片油田，问总共多少个油田</p>
-<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>DFS，对整个矩阵进行爆搜，在整个矩阵中，遇到一个@，将当前@变为<em>，油田数num++，然后由此开始dfs周围，对每遇到的一个@，将其变为</em>，并继续dfs直到没有@回溯。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="built_in">string</span> a[<span class="number">107</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ni,nj;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=-<span class="number">1</span>;p&lt;=<span class="number">1</span>;p++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> q=-<span class="number">1</span>;q&lt;=<span class="number">1</span>;q++)&#123;</span><br><span class="line">            ni=i+p;</span><br><span class="line">            nj=j+q;</span><br><span class="line">            <span class="keyword">if</span>(ni&gt;=<span class="number">0</span>&amp;&amp;ni&lt;m&amp;&amp;nj&gt;=<span class="number">0</span>&amp;&amp;nj&lt;n)&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[ni][nj]==<span class="string">'@'</span>)&#123;</span><br><span class="line">                    a[ni][nj]=<span class="string">'*'</span>;</span><br><span class="line">                    dfs(ni,nj);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;m,&amp;n)!=EOF)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>||n==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        num=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[i][j]==<span class="string">'@'</span>)&#123;</span><br><span class="line">                    a[i][j]=<span class="string">'*'</span>;</span><br><span class="line">                    dfs(i,j);</span><br><span class="line">                    num++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,num);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>  
+		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4596" target="_blank" rel="external">原题</a></p>
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>有n个虫洞，每个虫洞有三个参数X、Y、Z，如果存在一个ID，可以使ID%X在[Y,Z]区间内，则这个虫洞将可以吸引飞船，但是，如果同时两个或者两个以上的虫洞可以吸引飞船，那么飞船将被撕碎，不能通过。</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>由于我们的目的是：确定每两个虫洞的参数之间不存在一个ID，ID满足：<br>A<em>x1+C=ID<br>B</em>X2+D=ID<br>X1，X2是两个虫洞的X参数，C在Y1,Z1之间取值，D在Y2，Z2之间取值。<br>然后，我当时就。。卡住了，把这个式子转化成了两个同余方程，但是其实不用计算ID，因为我们的目的是存在ID，然后C,D都是存在的，所以只要A,B存在就可以了，所以联立式子变成一个二元一次不定方程，然后根据数论的不定方程的相关知识：<br>A<em>X1-B</em>x2=D-C<br>X1≡(D-C)(mod X2)<br>这个同余方程有解的条件是(D-C)%gcd(x1,x2)==0<br>然后对每两组虫洞的参数，看在D-C取值范围内的是否存在gcd(x1,x2)的整数倍，队友是用容斥判断的，我写的是分类讨论，虽然被基友说过很多次了。。不要老用分类讨论，要证明要证明，分类讨论通常会漏掉很多情况（比如上次的西电校赛网络赛的贪心。。），嘛这次以后！！！我会改的！！！（不过很多情况下第一反应还是分类讨论啊。。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> N <span class="number">1007</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> x[N],y[N],z[N],n;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">gcd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (b==<span class="number">0</span>)?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> mn,mx,mmn,mmx,g;</span><br><span class="line">    g=gcd(x[i],x[j]);</span><br><span class="line">    mn=y[i]-z[j];<span class="comment">//可以取的gcd的范围</span></span><br><span class="line">    mx=z[i]-y[j];</span><br><span class="line">    <span class="comment">//cout&lt;&lt;g&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">if</span>(g&gt;=min(<span class="built_in">fabs</span>(mx),<span class="built_in">fabs</span>(mn))&amp;&amp;g&lt;=max(<span class="built_in">fabs</span>(mx),<span class="built_in">fabs</span>(mn)))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(g&lt;min(<span class="built_in">fabs</span>(mx),<span class="built_in">fabs</span>(mn)))&#123;</span><br><span class="line">        mmn=mn/g;</span><br><span class="line">        mmx=mx/g;<span class="comment">//cout&lt;&lt;mmx&lt;&lt;' '&lt;&lt;mmn;</span></span><br><span class="line">        <span class="keyword">return</span> mmn!=mmx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(g&gt;max(<span class="built_in">fabs</span>(mx),<span class="built_in">fabs</span>(mn)))&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="number">0</span>&gt;=min(mx,mn)&amp;&amp;<span class="number">0</span>&lt;=max(mx,mn))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)&#123;</span><br><span class="line">        <span class="keyword">int</span> p=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%I64d%I64d%I64d"</span>,&amp;x[i],&amp;y[i],&amp;z[i]);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;<span class="comment">//cout&lt;&lt;solve(i,j);</span></span><br><span class="line">                <span class="keyword">if</span>(solve(i,j))&#123;</span><br><span class="line">                    p=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Cannot Take off\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Can Take off\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/搜索/">搜索</a>►<a class="article-category-link" href="/categories/搜索/普通搜索/">普通搜索</a>►<a class="article-category-link" href="/categories/搜索/普通搜索/DFS/">DFS</a>
+  <a class="article-category-link" href="/categories/Maths/">Maths</a>►<a class="article-category-link" href="/categories/Maths/数论/">数论</a>►<a class="article-category-link" href="/categories/Maths/数论/不定方程/">不定方程</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/DFS/">DFS</a><a href="/tags/HDU/">HDU</a>
-  </div>
 
 </div>
 
@@ -134,7 +127,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/16/HDU1241/" data-title="HDU1241 Oil Deposits | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/22/HDU4596/" data-title="HDU4596 Yet another end of the world | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,19 +140,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/04/21/usaco1.1.2beads/" title="USACO1.1.4beads">
-  <strong>上一篇：</strong><br/>
-  <span>
-  USACO1.1.4beads</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/04/16/HDU1584/"  title="HDU1584 蜘蛛牌">
+<a href="/2016/04/21/usaco1.3.2barn1/"  title="USACO1.3.2barn1">
  <strong>下一篇：</strong><br/> 
- <span>HDU1584 蜘蛛牌
+ <span>USACO1.3.2barn1
 </span>
 </a>
 </div>
