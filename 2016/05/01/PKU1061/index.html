@@ -4,56 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Rylynnn</title>
+    <title>PKU1061 青蛙的约会 | Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Rylynnn">
     
 
     
-    <meta name="description" content="title: PKU1061 青蛙的约会date: 2016-05-01categories:
-
-数学
-数论
-GCD和Extended_GCDtags:
-不定方程
-HDUtoc: true
-
-原题
+    <meta name="description" content="原题
 题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
 分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解
-(x+p">
+(x+pm)-(y+pn)=kl   
+p(n-m)+kl=x-y
+wa1:gcd(a,b)应当存起来。。因为后面会改变wa2：因为a,b可能是负数，所以原本的gcd就是写错了。。。
+*注意：因为次数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rylynnn">
+<meta property="og:title" content="PKU1061 青蛙的约会">
 <meta property="og:url" content="http://yoursite.com/2016/05/01/PKU1061/index.html">
 <meta property="og:site_name" content="Rylynnn">
-<meta property="og:description" content="title: PKU1061 青蛙的约会date: 2016-05-01categories:
-
-数学
-数论
-GCD和Extended_GCDtags:
-不定方程
-HDUtoc: true
-
-原题
+<meta property="og:description" content="原题
 题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
 分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解
-(x+p">
-<meta property="og:updated_time" content="2016-05-01T08:48:41.851Z">
+(x+pm)-(y+pn)=kl   
+p(n-m)+kl=x-y
+wa1:gcd(a,b)应当存起来。。因为后面会改变wa2：因为a,b可能是负数，所以原本的gcd就是写错了。。。
+*注意：因为次数">
+<meta property="og:updated_time" content="2016-05-01T08:54:06.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rylynnn">
-<meta name="twitter:description" content="title: PKU1061 青蛙的约会date: 2016-05-01categories:
-
-数学
-数论
-GCD和Extended_GCDtags:
-不定方程
-HDUtoc: true
-
-原题
+<meta name="twitter:title" content="PKU1061 青蛙的约会">
+<meta name="twitter:description" content="原题
 题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
 分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解
-(x+p">
+(x+pm)-(y+pn)=kl   
+p(n-m)+kl=x-y
+wa1:gcd(a,b)应当存起来。。因为后面会改变wa2：因为a,b可能是负数，所以原本的gcd就是写错了。。。
+*注意：因为次数">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -113,14 +98,14 @@ HDUtoc: true
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/01/PKU1061/" title="" itemprop="url"></a>
+      <a href="/2016/05/01/PKU1061/" title="PKU1061 青蛙的约会" itemprop="url">PKU1061 青蛙的约会</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-01T08:48:41.851Z" itemprop="datePublished"> 发表于 2016-05-01</time>
+    <time datetime="2016-04-30T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-05-01</time>
     
   </p>
 </header>
@@ -129,20 +114,11 @@ HDUtoc: true
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#toc_3A_true"><span class="toc-number">1.</span> <span class="toc-text">toc: true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">2.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
 		
 		</div>
 		
-		<hr>
-<p>title: PKU1061 青蛙的约会<br>date: 2016-05-01<br>categories:</p>
-<ul>
-<li>数学</li>
-<li>数论</li>
-<li>GCD和Extended_GCD<br>tags:</li>
-<li>不定方程</li>
-<li>HDU<h2 id="toc_3A_true"><a href="#toc_3A_true" class="headerlink" title="toc: true"></a>toc: true</h2></li>
-</ul>
-<p><a href="http://poj.org/problem?id=1061" target="_blank" rel="external">原题</a></p>
+		<p><a href="http://poj.org/problem?id=1061" target="_blank" rel="external">原题</a></p>
 <h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L</p>
 <h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解</p>
 <pre><code>(x+pm)-(y+pn)=kl   
@@ -155,6 +131,16 @@ p(n-m)+kl=x-y
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/数学/">数学</a>►<a class="article-category-link" href="/categories/数学/数论/">数论</a>►<a class="article-category-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/HDU/">HDU</a><a href="/tags/不定方程/">不定方程</a>
+  </div>
 
 </div>
 
@@ -162,7 +148,7 @@ p(n-m)+kl=x-y
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/05/01/PKU1061/" data-title="Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/05/01/PKU1061/" data-title="PKU1061 青蛙的约会 | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -175,11 +161,19 @@ p(n-m)+kl=x-y
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/05/01/HDU4497/" title="HDU4497 GCD and LCM">
+  <strong>上一篇：</strong><br/>
+  <span>
+  HDU4497 GCD and LCM</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2016/05/01/HDU4497/"  title="HDU4497 GCD and LCM">
+<a href="/2016/04/30/GCD和Extended_GCD/"  title="GCD和Extended_GCD（多元不定方程）">
  <strong>下一篇：</strong><br/> 
- <span>HDU4497 GCD and LCM
+ <span>GCD和Extended_GCD（多元不定方程）
 </span>
 </a>
 </div>
@@ -188,7 +182,7 @@ p(n-m)+kl=x-y
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/05/01/PKU1061/" data-title="" data-url="http://yoursite.com/2016/05/01/PKU1061/"></div>
+	<div class="ds-thread" data-thread-key="2016/05/01/PKU1061/" data-title="PKU1061 青蛙的约会" data-url="http://yoursite.com/2016/05/01/PKU1061/"></div>
 </section>
 
 
@@ -198,7 +192,7 @@ p(n-m)+kl=x-y
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#toc_3A_true"><span class="toc-number">1.</span> <span class="toc-text">toc: true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">2.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
  
   </div>
 
@@ -219,7 +213,7 @@ p(n-m)+kl=x-y
   
 <div class="category-block">
   <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/USACO/">USACO</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/">基础算法</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/模拟/">模拟</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/">搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/">普通搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">2</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/">数论</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/USACO/">USACO</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/">基础算法</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/模拟/">模拟</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/">搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/">普通搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">2</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/">数论</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
 </div>
 
 
@@ -229,11 +223,15 @@ p(n-m)+kl=x-y
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/HDU/" title="HDU">HDU<sup>7</sup></a></li>
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>8</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/不定方程/" title="不定方程">不定方程<sup>3</sup></a></li>
 			
 		
 			
@@ -242,10 +240,6 @@ p(n-m)+kl=x-y
 		
 			
 				<li><a href="/tags/基本DP/" title="基本DP">基本DP<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/不定方程/" title="不定方程">不定方程<sup>2</sup></a></li>
 			
 		
 			
