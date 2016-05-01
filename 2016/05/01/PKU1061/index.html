@@ -4,32 +4,53 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>GCD和Extended_GCD（多元不定方程） | Rylynnn</title>
+    <title>Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Rylynnn">
     
 
     
-    <meta name="description" content="GCD欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。gcd(a,b) 表示 a,b的最大公约数，一般程序里也用同名函数来计算最大公约数
-证明若a,b都不为0，且a=bq+r,0≤r&amp;lt; b，则
-(a,b)=(b,r)
-设d=(a,b),c=(b,r)∵ a=bq+r,d|a,d|b∴ d|r，即d≤c∵ a=bq+r,c|b,c|r∴ c|a,即c≤d∴ d≤c且c≤d，即c">
+    <meta name="description" content="title: GCD和Extended_GCD（多元不定方程）date: 2016-05-01categories:
+
+数学
+数论
+GCD和Extended_GCDtags:
+不定方程
+HDUtoc: true
+
+原题
+题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
+分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GCD和Extended_GCD（多元不定方程）">
-<meta property="og:url" content="http://yoursite.com/2016/04/30/GCD和Extended_GCD/index.html">
+<meta property="og:title" content="Rylynnn">
+<meta property="og:url" content="http://yoursite.com/2016/05/01/PKU1061/index.html">
 <meta property="og:site_name" content="Rylynnn">
-<meta property="og:description" content="GCD欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。gcd(a,b) 表示 a,b的最大公约数，一般程序里也用同名函数来计算最大公约数
-证明若a,b都不为0，且a=bq+r,0≤r&amp;lt; b，则
-(a,b)=(b,r)
-设d=(a,b),c=(b,r)∵ a=bq+r,d|a,d|b∴ d|r，即d≤c∵ a=bq+r,c|b,c|r∴ c|a,即c≤d∴ d≤c且c≤d，即c">
-<meta property="og:updated_time" content="2016-05-01T08:45:43.922Z">
+<meta property="og:description" content="title: GCD和Extended_GCD（多元不定方程）date: 2016-05-01categories:
+
+数学
+数论
+GCD和Extended_GCDtags:
+不定方程
+HDUtoc: true
+
+原题
+题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
+分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则">
+<meta property="og:updated_time" content="2016-05-01T08:45:22.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GCD和Extended_GCD（多元不定方程）">
-<meta name="twitter:description" content="GCD欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。gcd(a,b) 表示 a,b的最大公约数，一般程序里也用同名函数来计算最大公约数
-证明若a,b都不为0，且a=bq+r,0≤r&amp;lt; b，则
-(a,b)=(b,r)
-设d=(a,b),c=(b,r)∵ a=bq+r,d|a,d|b∴ d|r，即d≤c∵ a=bq+r,c|b,c|r∴ c|a,即c≤d∴ d≤c且c≤d，即c">
+<meta name="twitter:title" content="Rylynnn">
+<meta name="twitter:description" content="title: GCD和Extended_GCD（多元不定方程）date: 2016-05-01categories:
+
+数学
+数论
+GCD和Extended_GCDtags:
+不定方程
+HDUtoc: true
+
+原题
+题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
+分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -89,14 +110,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/30/GCD和Extended_GCD/" title="GCD和Extended_GCD（多元不定方程）" itemprop="url">GCD和Extended_GCD（多元不定方程）</a>
+      <a href="/2016/05/01/PKU1061/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-29T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-04-30</time>
+    <time datetime="2016-05-01T08:45:22.047Z" itemprop="datePublished"> 发表于 2016-05-01</time>
     
   </p>
 </header>
@@ -105,79 +126,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GCD"><span class="toc-number">1.</span> <span class="toc-text">GCD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u8BC1_u660E"><span class="toc-number">1.1.</span> <span class="toc-text">证明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Extended_GCD"><span class="toc-number">2.</span> <span class="toc-text">Extended_GCD</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#toc_3A_true"><span class="toc-number">1.</span> <span class="toc-text">toc: true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">2.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h1><p>欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。<br>gcd(a,b) 表示 a,b的最大公约数，一般程序里也用同名函数来计算最大公约数</p>
-<h2 id="u8BC1_u660E"><a href="#u8BC1_u660E" class="headerlink" title="证明"></a>证明</h2><p>若a,b都不为0，且a=bq+r,0≤r&lt; b，则</p>
-<pre><code>(a,b)=(b,r)
-</code></pre><p>设d=(a,b),c=(b,r)<br>∵ a=bq+r,d|a,d|b<br>∴ d|r，即d≤c<br>∵ a=bq+r,c|b,c|r<br>∴ c|a,即c≤d<br>∴ d≤c且c≤d，即c=d，(a,b)=(b,r)</p>
-<h1 id="Extended_GCD"><a href="#Extended_GCD" class="headerlink" title="Extended_GCD"></a>Extended_GCD</h1><ul>
-<li>求解二元一次不定方程的解</li>
-</ul>
-<p>若d%gcd(a,b)==0,则有x和y使ax+by=d<br>基本思路:用gcd算法,倒推得到这样的x和y,相当于构造一组解</p>
-<p>通解：</p>
-<pre><code>x=x0+b/Gcd(a,b)*t
-y=y0-a/Gcd(a,b)*t
-</code></pre><table>
-<thead>
-<tr>
-<th>GCD</th>
-<th style="text-align:center">EX_GCD</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>a=q1*b+r1</td>
-<td style="text-align:center">r1=a-q1*b</td>
-</tr>
-<tr>
-<td>b=q2*r1+r2</td>
-<td style="text-align:center">r2=b-q2*r1</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">=b-q2<em>(a-q1</em>b)</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">=-q1<em>a+(1-q1</em>q2)*b</td>
-</tr>
-<tr>
-<td>r1=q3*r2+r3</td>
-<td style="text-align:center">r3=r1-q3*r2</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">=(a-q1<em>b)-q3</em>(-q1<em>a+(1-q1</em>q2)*b)</td>
-</tr>
-<tr>
-<td>…</td>
-<td style="text-align:center">…</td>
-</tr>
-</tbody>
-</table>
+		<hr>
+<p>title: GCD和Extended_GCD（多元不定方程）<br>date: 2016-05-01<br>categories:</p>
 <ul>
-<li><p>计算a%b及b%a的乘法逆元<br>如果gcd(a，b)=d，则存在m，n，使得d = ma + nb，称呼这种关系为a、b组合整数d，m，n称为组合系数。当d=1时，有 ma + nb = 1 ，此时可以看出m是a模b的乘法逆元，n是b模a的乘法逆元。</p>
-</li>
-<li></li>
+<li>数学</li>
+<li>数论</li>
+<li>GCD和Extended_GCD<br>tags:</li>
+<li>不定方程</li>
+<li>HDU<h2 id="toc_3A_true"><a href="#toc_3A_true" class="headerlink" title="toc: true"></a>toc: true</h2></li>
 </ul>
+<p><a href="http://poj.org/problem?id=1061" target="_blank" rel="external">原题</a></p>
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解</p>
+<pre><code>(x+pm)-(y+pn)=kl   
+p(n-m)+kl=x-y
+</code></pre><p>wa1:gcd(a,b)应当存起来。。因为后面会改变<br>wa2：因为a,b可能是负数，所以原本的gcd就是写错了。。。</p>
+<p><em>*注意：因为次数不可能为负数，所以需要对求出来的特解进行处理,求出最小正整数解</em><br>*</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">gcd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b)</span></span><br><span class="line"></span>&#123;<span class="keyword">return</span> b&gt;<span class="number">0</span>?gcd(b,a%b):a;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b,<span class="keyword">long</span> <span class="keyword">long</span> &amp;x,<span class="keyword">long</span> <span class="keyword">long</span> &amp;y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>)&#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    exgcd(b,a%b,y,x);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> temp=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=temp-a/b*y;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> x,y,m,n,t,l,ans,a,b,c,d;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld%lld%lld"</span>,&amp;x,&amp;y,&amp;m,&amp;n,&amp;l)!=EOF)&#123;</span><br><span class="line">        ans=x-y;</span><br><span class="line">        a=n-m;</span><br><span class="line">        b=l;</span><br><span class="line">        t=gcd(a,b);</span><br><span class="line">        <span class="keyword">if</span>(ans%t!=<span class="number">0</span>||m==n)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Impossible\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            a/=t;</span><br><span class="line">            b/=t;</span><br><span class="line">            ans/=t;</span><br><span class="line">            exgcd(a,b,c,d);</span><br><span class="line">            c=((ans*c)%b+b)%b;</span><br><span class="line">            <span class="keyword">if</span>(c&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                c+=b;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/数学/">数学</a>►<a class="article-category-link" href="/categories/数学/数论/">数论</a>►<a class="article-category-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/不定方程/">不定方程</a><a href="/tags/学习笔记/">学习笔记</a>
-  </div>
 
 </div>
 
@@ -185,7 +159,7 @@ y=y0-a/Gcd(a,b)*t
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/30/GCD和Extended_GCD/" data-title="GCD和Extended_GCD（多元不定方程） | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/05/01/PKU1061/" data-title="Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -198,19 +172,11 @@ y=y0-a/Gcd(a,b)*t
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/05/01/HDU4497/" title="HDU4497 GCD and LCM">
-  <strong>上一篇：</strong><br/>
-  <span>
-  HDU4497 GCD and LCM</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/04/30/生成函数/"  title="生成函数">
+<a href="/2016/05/01/HDU4497/"  title="HDU4497 GCD and LCM">
  <strong>下一篇：</strong><br/> 
- <span>生成函数
+ <span>HDU4497 GCD and LCM
 </span>
 </a>
 </div>
@@ -219,7 +185,7 @@ y=y0-a/Gcd(a,b)*t
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/04/30/GCD和Extended_GCD/" data-title="GCD和Extended_GCD（多元不定方程）" data-url="http://yoursite.com/2016/04/30/GCD和Extended_GCD/"></div>
+	<div class="ds-thread" data-thread-key="2016/05/01/PKU1061/" data-title="" data-url="http://yoursite.com/2016/05/01/PKU1061/"></div>
 </section>
 
 
@@ -229,7 +195,7 @@ y=y0-a/Gcd(a,b)*t
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GCD"><span class="toc-number">1.</span> <span class="toc-text">GCD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u8BC1_u660E"><span class="toc-number">1.1.</span> <span class="toc-text">证明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Extended_GCD"><span class="toc-number">2.</span> <span class="toc-text">Extended_GCD</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#toc_3A_true"><span class="toc-number">1.</span> <span class="toc-text">toc: true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">2.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li></ol>
  
   </div>
 
