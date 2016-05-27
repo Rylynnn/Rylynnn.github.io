@@ -23,7 +23,7 @@
 证明若a,b都不为0，且a=bq+r,0≤r&amp;lt; b，则
 (a,b)=(b,r)
 设d=(a,b),c=(b,r)∵ a=bq+r,d|a,d|b∴ d|r，即d≤c∵ a=bq+r,c|b,c|r∴ c|a,即c≤d∴ d≤c且c≤d，即c">
-<meta property="og:updated_time" content="2016-05-02T03:07:15.210Z">
+<meta property="og:updated_time" content="2016-05-11T20:26:39.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD和Extended_GCD（多元不定方程）">
 <meta name="twitter:description" content="GCD欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。gcd(a,b) 表示 a,b的最大公约数，一般程序里也用同名函数来计算最大公约数
@@ -166,7 +166,8 @@ y=n0*y0–a0*t    (t=0,1,2,…)
 <ul>
 <li><p>计算a%b及b%a的乘法逆元<br>如果gcd(a，b)=d，则存在m，n，使得:<br>称呼这种关系为a、b组合整数d，m，n称为组合系数。当d=1时，有 ma + nb = 1 ，此时可以看出m是a模b的乘法逆元，n是b模a的乘法逆元。</p>
 </li>
-<li></li>
+<li><p>求解模线性方程（线性同余方程）；</p>
+</li>
 </ul>
   
 	</div>
@@ -255,7 +256,7 @@ y=n0*y0–a0*t    (t=0,1,2,…)
   
 <div class="category-block">
   <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/USACO/">USACO</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/">基础算法</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/模拟/">模拟</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/">搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/">普通搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">2</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/">数论</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/USACO/">USACO</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/">基础算法</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/模拟/">模拟</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/">搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/">普通搜索</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">2</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/">数论</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/欧拉函数和欧拉筛/">欧拉函数和欧拉筛</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
 </div>
 
 
@@ -265,23 +266,23 @@ y=n0*y0–a0*t    (t=0,1,2,…)
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/HDU/" title="HDU">HDU<sup>7</sup></a></li>
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>9</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/不定方程/" title="不定方程">不定方程<sup>4</sup></a></li>
+				<li><a href="/tags/不定方程/" title="不定方程">不定方程<sup>8</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>3</sup></a></li>
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/基本DP/" title="基本DP">基本DP<sup>3</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/2014Muti/" title="2014Muti">2014Muti<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/基本DP/" title="基本DP">基本DP<sup>2</sup></a></li>
 			
 		
 			
@@ -293,11 +294,7 @@ y=n0*y0–a0*t    (t=0,1,2,…)
 			
 		
 			
-				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/乱搞/" title="乱搞">乱搞<sup>1</sup></a></li>
+				<li><a href="/tags/贪心/" title="贪心">贪心<sup>1</sup></a></li>
 			
 		
 			
@@ -305,11 +302,31 @@ y=n0*y0–a0*t    (t=0,1,2,…)
 			
 		
 			
-				<li><a href="/tags/DFS/" title="DFS">DFS<sup>1</sup></a></li>
+				<li><a href="/tags/Code-Forces/" title="Code Forces">Code Forces<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/贪心/" title="贪心">贪心<sup>1</sup></a></li>
+				<li><a href="/tags/乱搞/" title="乱搞">乱搞<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ZOJ/" title="ZOJ">ZOJ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/欧拉函数/" title="欧拉函数">欧拉函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/积性函数/" title="积性函数">积性函数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
 			
 		
 			
@@ -320,6 +337,8 @@ y=n0*y0–a0*t    (t=0,1,2,…)
 				<li><a href="/tags/2013-通化邀请赛/" title="2013 通化邀请赛">2013 通化邀请赛<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/DFS/" title="DFS">DFS<sup>1</sup></a></li>
 			
 		
 		</ul>
