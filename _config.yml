@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Rylynno
+title: Rylynnn
 subtitle: To be better
 description:
-author: Rylynno
-language: English/Chinese
+author: Rylynnn
+language: zh-CN
 timezone: 
 
 # URL
@@ -63,11 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: pacman
-
-# Stylus
-stylus:
-compress: true
+theme: jacman
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
