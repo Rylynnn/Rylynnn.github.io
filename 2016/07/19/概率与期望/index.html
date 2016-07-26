@@ -11,25 +11,25 @@
     
 
     
-    <meta name="description" content="条件概率伯努利试验伯努利试验（Bernoulli trial）是只有两种可能结果的单次随机试验，即对于一个随机变量X而言，
-{\displaystyle Pr[X=1]\;=\;p} Pr[X=1]\;=\;p{\displaystyle Pr[X=0]\;=\;1-p} Pr[X=0]\;=\;1-p
-1.每一次试验的结果不会受其它实验结果的影响。事件之间相互独立。
-2.多次试验且每次事件发生的">
+    <meta name="description" content="条件概率在同一个样本空间Ω中的事件或者子集A与B，如果随机从Ω中选出的一个元素属于B，那么这个随机选择的元素还属于A的概率就定义为在B的前提下A的条件概率。从这个定义中，我们可以得出
+\\(P(A|B) = |A∩B|/|B|\\)
+分子、分母都除以|Ω|得到
+\({\displaystyle P(A|B)={\frac {P(A\cap B)}{P(B)}}} P(A|B)={\frac  {P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率与期望总结">
 <meta property="og:url" content="http://yoursite.com/2016/07/19/概率与期望/index.html">
 <meta property="og:site_name" content="Rylynnn">
-<meta property="og:description" content="条件概率伯努利试验伯努利试验（Bernoulli trial）是只有两种可能结果的单次随机试验，即对于一个随机变量X而言，
-{\displaystyle Pr[X=1]\;=\;p} Pr[X=1]\;=\;p{\displaystyle Pr[X=0]\;=\;1-p} Pr[X=0]\;=\;1-p
-1.每一次试验的结果不会受其它实验结果的影响。事件之间相互独立。
-2.多次试验且每次事件发生的">
-<meta property="og:updated_time" content="2016-07-20T08:17:32.259Z">
+<meta property="og:description" content="条件概率在同一个样本空间Ω中的事件或者子集A与B，如果随机从Ω中选出的一个元素属于B，那么这个随机选择的元素还属于A的概率就定义为在B的前提下A的条件概率。从这个定义中，我们可以得出
+\\(P(A|B) = |A∩B|/|B|\\)
+分子、分母都除以|Ω|得到
+\({\displaystyle P(A|B)={\frac {P(A\cap B)}{P(B)}}} P(A|B)={\frac  {P">
+<meta property="og:updated_time" content="2016-07-24T07:10:51.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率与期望总结">
-<meta name="twitter:description" content="条件概率伯努利试验伯努利试验（Bernoulli trial）是只有两种可能结果的单次随机试验，即对于一个随机变量X而言，
-{\displaystyle Pr[X=1]\;=\;p} Pr[X=1]\;=\;p{\displaystyle Pr[X=0]\;=\;1-p} Pr[X=0]\;=\;1-p
-1.每一次试验的结果不会受其它实验结果的影响。事件之间相互独立。
-2.多次试验且每次事件发生的">
+<meta name="twitter:description" content="条件概率在同一个样本空间Ω中的事件或者子集A与B，如果随机从Ω中选出的一个元素属于B，那么这个随机选择的元素还属于A的概率就定义为在B的前提下A的条件概率。从这个定义中，我们可以得出
+\\(P(A|B) = |A∩B|/|B|\\)
+分子、分母都除以|Ω|得到
+\({\displaystyle P(A|B)={\frac {P(A\cap B)}{P(B)}}} P(A|B)={\frac  {P">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -105,15 +105,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6761_u4EF6_u6982_u7387"><span class="toc-number">1.</span> <span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8BD5_u9A8C"><span class="toc-number">2.</span> <span class="toc-text">伯努利试验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8FC7_u7A0B"><span class="toc-number">2.1.</span> <span class="toc-text">伯努利过程</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6761_u4EF6_u6982_u7387"><span class="toc-number">1.</span> <span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8BD5_u9A8C"><span class="toc-number">2.</span> <span class="toc-text">伯努利试验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8FC7_u7A0B"><span class="toc-number">3.</span> <span class="toc-text">伯努利过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u8D1F_u4E8C_u9879_u5206_u5E03"><span class="toc-number">3.1.</span> <span class="toc-text">负二项分布</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h2 id="u6761_u4EF6_u6982_u7387"><a href="#u6761_u4EF6_u6982_u7387" class="headerlink" title="条件概率"></a>条件概率</h2><h2 id="u4F2F_u52AA_u5229_u8BD5_u9A8C"><a href="#u4F2F_u52AA_u5229_u8BD5_u9A8C" class="headerlink" title="伯努利试验"></a>伯努利试验</h2><p>伯努利试验（Bernoulli trial）是只有两种可能结果的单次随机试验，即对于一个随机变量X而言，</p>
-<p>{\displaystyle Pr[X=1]\;=\;p} Pr[X=1]\;=\;p<br>{\displaystyle Pr[X=0]\;=\;1-p} Pr[X=0]\;=\;1-p</p>
+		<h2 id="u6761_u4EF6_u6982_u7387"><a href="#u6761_u4EF6_u6982_u7387" class="headerlink" title="条件概率"></a>条件概率</h2><p>在同一个样本空间Ω中的事件或者子集A与B，如果随机从Ω中选出的一个元素属于B，那么这个随机选择的元素还属于A的概率就定义为在B的前提下A的条件概率。从这个定义中，我们可以得出</p>
+<p>\\(P(A|B) = |A∩B|/|B|\\)</p>
+<p>分子、分母都除以|Ω|得到</p>
+<p>\({\displaystyle P(A|B)={\frac {P(A\cap B)}{P(B)}}} P(A|B)={\frac  {P(A\cap B)}{P(B)}}\)<br>有时候也称为：后验概率</p>
+<h2 id="u4F2F_u52AA_u5229_u8BD5_u9A8C"><a href="#u4F2F_u52AA_u5229_u8BD5_u9A8C" class="headerlink" title="伯努利试验"></a>伯努利试验</h2><p>伯努利试验（Bernoulli trial）是只有两种可能结果的单次随机试验，即对于一个随机变量X而言，</p>
+<p>\({\displaystyle Pr[X=1]\;=\;p} Pr[X=1]\;=\;p\)<br>{\displaystyle Pr[X=0]\;=\;1-p} Pr[X=0]\;=\;1-p</p>
 <pre><code>1.每一次试验的结果不会受其它实验结果的影响。事件之间相互独立。
 2.多次试验且每次事件发生的概率没有相互之间的影响。
-</code></pre><h3 id="u4F2F_u52AA_u5229_u8FC7_u7A0B"><a href="#u4F2F_u52AA_u5229_u8FC7_u7A0B" class="headerlink" title="伯努利过程"></a>伯努利过程</h3><p>伯努利过程是一个由有限个或无限个的独立随机变量 X1, X2, X3 ,…, 所组成的离散时间随机过程，其中 X1, X2, X3 ,…, 满足如下条件：</p>
+</code></pre><h2 id="u4F2F_u52AA_u5229_u8FC7_u7A0B"><a href="#u4F2F_u52AA_u5229_u8FC7_u7A0B" class="headerlink" title="伯努利过程"></a>伯努利过程</h2><p>伯努利过程是一个由有限个或无限个的独立随机变量 X1, X2, X3 ,…, 所组成的离散时间随机过程，其中 X1, X2, X3 ,…, 满足如下条件：</p>
 <pre><code>对每个 i, Xi 等于 0 或 1;
 对每个 i, Xi = 1 的概率等于 p.
 </code></pre><p>换言之，伯努利过程是一列独立同分布的伯努利试验。每个Xi 的2个结果也被称为“成功”或“失败”。所以当用数字 0 或 1 来表示的时候，这个数字被称为第i个试验的成功次数。</p>
@@ -121,7 +125,12 @@
 <pre><code>前 n 个试验的成功次数服从二项分布。
 要得到 r 次成功所需要的试验次数服从负二项分布。
 要得到 1 次成功所需要的试验次数服从几何分布，这是负二项分布的一个特例。
-</code></pre><p>伯努利过程在随机程序分类上，属于discrete-time, discrete-value。</p>
+</code></pre><p>例1：<br>假定太阳升起这一事件服从一个未知参数A的伯努利过程,且A是[0,1]内均匀分布,则利用已给定的历史数据,太阳明天能升起这一事件的后验概率为<br>\(P(Xn+1|Xn=1,Xn-1=1,…,X1=1)=P(Xn+1,Xn=1,Xn-1=1,…,X1=1)/P(Xn=1,Xn-1=1,…,X1=1)=A^(n+1)在[0,1]内对A的积分/A^n在[0,1]内对A的积分=(n+1)/(n+2)\)<br>即已知太阳从第1天到第n天都能升起,第n+1天能升起的概率接近于1.</p>
+<h3 id="u8D1F_u4E8C_u9879_u5206_u5E03"><a href="#u8D1F_u4E8C_u9879_u5206_u5E03" class="headerlink" title="负二项分布"></a>负二项分布</h3><p>负二项分布是统计学上一种离散概率分布。“负二项分布”与“二项分布”的区别在于：“二项分布”是固定试验总次数N的独立试验中，成功次数k的分布；而“负二项分布”是所有到成功r次时即终止的独立试验中，失败次数k的分布。</p>
+<p>当 {\displaystyle r} r是整数时，负二项分布又称帕斯卡分布，其概率质量函数为 {\displaystyle f(k;r,p)={k+r-1 \choose r-1}\cdot p^{r}\cdot (1-p)^{k}!} f(k;r,p)={k+r-1 \choose r-1}\cdot p^{r}\cdot (1-p)^{k}!。它表示，已知一个事件在伯努利试验中每次的出现概率是 {\displaystyle p} p，在一连串伯努利试验中，一件事件刚好在第 {\displaystyle r+k} r+k次试验出现第 {\displaystyle r} r次的概率。</p>
+<p>取 {\displaystyle r=1} r=1，负二项分布等于几何分布。其概率质量函数为 {\displaystyle f(k;1,p)=p\cdot (1-p)^{k}!} f(k;1,p)=p\cdot (1-p)^{k}!。</p>
+<p>例2：<br>有个盒子里面装了n个不同颜色的球，每次你从中选取一个并将其放回，问：平均需要多少次使得所有颜色的球都被取过。</p>
+<p>解：<br>定义状态：为已经得到x个不同颜色的球的期望值，则：<br>所以</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -129,7 +138,7 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/数学/">数学</a>►<a class="article-category-link" href="/categories/数学/概率论/">概率论</a>
+  <a class="article-category-link" href="/categorie/数学/">数学</a>►<a class="article-category-link" href="/categorie/数学/概率论/">概率论</a>
 </div>
 
 
@@ -158,18 +167,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/07/19/HDU4869/" title="HDU4869 Turn the pokers">
+ <a href="/2016/07/20/hello-world/" title="Hello World">
   <strong>上一篇：</strong><br/>
   <span>
-  HDU4869 Turn the pokers</span>
+  Hello World</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/17/博客编写规则及注释/"  title="博客编写规则及注释">
+<a href="/2016/07/19/目标任务/"  title="目标任务">
  <strong>下一篇：</strong><br/> 
- <span>博客编写规则及注释
+ <span>目标任务
 </span>
 </a>
 </div>
@@ -188,7 +197,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6761_u4EF6_u6982_u7387"><span class="toc-number">1.</span> <span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8BD5_u9A8C"><span class="toc-number">2.</span> <span class="toc-text">伯努利试验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8FC7_u7A0B"><span class="toc-number">2.1.</span> <span class="toc-text">伯努利过程</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u6761_u4EF6_u6982_u7387"><span class="toc-number">1.</span> <span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8BD5_u9A8C"><span class="toc-number">2.</span> <span class="toc-text">伯努利试验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u4F2F_u52AA_u5229_u8FC7_u7A0B"><span class="toc-number">3.</span> <span class="toc-text">伯努利过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u8D1F_u4E8C_u9879_u5206_u5E03"><span class="toc-number">3.1.</span> <span class="toc-text">负二项分布</span></a></li></ol></li></ol>
  
   </div>
 
@@ -209,7 +218,7 @@
   
 <div class="category-block">
   <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/">基础算法</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础算法/贪心/">贪心</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/">搜索</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/">普通搜索</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/">数学</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/">数论</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
 </div>
 
 
@@ -219,7 +228,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/HDU/" title="HDU">HDU<sup>10</sup></a></li>
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>14</sup></a></li>
 			
 		
 			

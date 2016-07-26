@@ -1,0 +1,543 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>HDU1026 Ignatius and the Princess I | Rylynnn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Rylynnn">
+    
+
+    
+    <meta name="description" content="原题
+题意一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。
+分析一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。
+1234567891011121314151617181920212223242">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU1026 Ignatius and the Princess I">
+<meta property="og:url" content="http://yoursite.com/2016/07/25/HDU1026/index.html">
+<meta property="og:site_name" content="Rylynnn">
+<meta property="og:description" content="原题
+题意一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。
+分析一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。
+1234567891011121314151617181920212223242">
+<meta property="og:updated_time" content="2016-07-25T07:39:32.153Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HDU1026 Ignatius and the Princess I">
+<meta name="twitter:description" content="原题
+题意一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。
+分析一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。
+1234567891011121314151617181920212223242">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Rylynnn" title="Rylynnn"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Rylynnn">Rylynnn</a></h1>
+				<h2 class="blog-motto">To be better</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/categories">Categories</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/07/25/HDU1026/" title="HDU1026 Ignatius and the Princess I" itemprop="url">HDU1026 Ignatius and the Princess I</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-07-25</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
+		
+		</div>
+		
+		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1026" target="_blank" rel="external">原题</a></p>
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ<br>主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> INF <span class="number">0x3f3f3f3f</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> node&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y,prex,prey;</span><br><span class="line">    <span class="keyword">char</span> val;</span><br><span class="line">    <span class="keyword">int</span> time;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node&amp; b)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> time&gt;b.time;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;knight;</span><br><span class="line">knight peo[<span class="number">107</span>][<span class="number">107</span>],now,nn;</span><br><span class="line"><span class="built_in">string</span> a[<span class="number">107</span>];</span><br><span class="line"><span class="keyword">int</span> mov[<span class="number">4</span>][<span class="number">2</span>]=&#123;-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> p,n,m,num;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">    priority_queue&lt;knight&gt;q;</span><br><span class="line">    peo[<span class="number">0</span>][<span class="number">0</span>].time=<span class="number">0</span>;</span><br><span class="line">    q.push(peo[<span class="number">0</span>][<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        now=q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(now.x==n-<span class="number">1</span>&amp;&amp;now.y==m-<span class="number">1</span>)&#123;</span><br><span class="line">            p=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            nn.x=now.x+mov[i][<span class="number">0</span>];</span><br><span class="line">            nn.y=now.y+mov[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(nn.x&gt;=<span class="number">0</span>&amp;&amp;nn.x&lt;n&amp;&amp;nn.y&gt;=<span class="number">0</span>&amp;&amp;nn.y&lt;m&amp;&amp;a[nn.x][nn.y]==<span class="string">'.'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(peo[nn.x][nn.y].time&gt;peo[now.x][now.y].time+<span class="number">1</span>)&#123;</span><br><span class="line">                    peo[nn.x][nn.y].time=peo[now.x][now.y].time+<span class="number">1</span>;</span><br><span class="line">                    <span class="comment">//cout&lt;&lt;peo[nn.x][nn.y].time&lt;&lt;endl;</span></span><br><span class="line">                    peo[nn.x][nn.y].prex=now.x;</span><br><span class="line">                    peo[nn.x][nn.y].prey=now.y;</span><br><span class="line">                    q.push(peo[nn.x][nn.y]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nn.x&gt;=<span class="number">0</span>&amp;&amp;nn.x&lt;n&amp;&amp;nn.y&gt;=<span class="number">0</span>&amp;&amp;nn.y&lt;m&amp;&amp;a[nn.x][nn.y]&gt;=<span class="string">'1'</span>&amp;&amp;a[nn.x][nn.y]&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(peo[nn.x][nn.y].time&gt;peo[now.x][now.y].time+a[nn.x][nn.y]-<span class="string">'0'</span>+<span class="number">1</span>)&#123;</span><br><span class="line">                    peo[nn.x][nn.y].time=peo[now.x][now.y].time+a[nn.x][nn.y]-<span class="string">'0'</span>+<span class="number">1</span>;</span><br><span class="line">                    <span class="comment">//cout&lt;&lt;peo[nn.x][nn.y].time&lt;&lt;endl;</span></span><br><span class="line">                    peo[nn.x][nn.y].prex=now.x;</span><br><span class="line">                    peo[nn.x][nn.y].prey=now.y;</span><br><span class="line">                    q.push(peo[nn.x][nn.y]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(peo[i][j].prex,peo[i][j].prey);</span><br><span class="line">    <span class="keyword">if</span>(a[i][j]==<span class="string">'.'</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%ds:(%d,%d)-&gt;(%d,%d)\n"</span>,peo[i][j].time,peo[i][j].prex,peo[i][j].prey,i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(a[i][j]&gt;=<span class="string">'1'</span>&amp;&amp;a[i][j]&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">        num=a[i][j]-<span class="string">'0'</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%ds:(%d,%d)-&gt;(%d,%d)\n"</span>,peo[i][j].time-num,peo[i][j].prex,peo[i][j].prey,i,j);</span><br><span class="line">        <span class="keyword">while</span>(--num&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%ds:FIGHT AT (%d,%d)\n"</span>,peo[i][j].time-num,i,j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF)&#123;</span><br><span class="line">        p=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                peo[i][j].x=peo[i][j].prex=i;</span><br><span class="line">                peo[i][j].y=peo[i][j].prey=j;</span><br><span class="line">                peo[i][j].val=a[i][j];</span><br><span class="line">                peo[i][j].time=INF;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        bfs();</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"It takes %d seconds to reach the target position, let me show you the way.\n"</span>,peo[n-<span class="number">1</span>][m-<span class="number">1</span>].time);</span><br><span class="line">            dfs(n-<span class="number">1</span>,m-<span class="number">1</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"FINISH\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"God please help our poor hero.\n"</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"FINISH\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categorie/搜索/">搜索</a>►<a class="article-category-link" href="/categorie/搜索/普通搜索/">普通搜索</a>►<a class="article-category-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/HDU/">HDU</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/07/25/HDU1026/" data-title="HDU1026 Ignatius and the Princess I | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/07/24/HDU1372/"  title="HDU1372 Knight Moves">
+ <strong>下一篇：</strong><br/> 
+ <span>HDU1372 Knight Moves
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/07/25/HDU1026/" data-title="HDU1026 Ignatius and the Princess I" data-url="http://yoursite.com/2016/07/25/HDU1026/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="Rylynnn" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  
+<div class="category-block">
+  <h3 class="asidetitle">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>14</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/USACO/" title="USACO">USACO<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/POJ/" title="POJ">POJ<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2014Muti-9/" title="2014Muti 9">2014Muti 9<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Code-Forces/" title="Code Forces">Code Forces<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ZOJ/" title="ZOJ">ZOJ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2014Muti-1/" title="2014Muti 1">2014Muti 1<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2013-南京邀请赛/" title="2013 南京邀请赛">2013 南京邀请赛<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2013-通化邀请赛/" title="2013 通化邀请赛">2013 通化邀请赛<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/idealism_xxm" target="_blank" title="idealism">idealism</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/xaphoenix" target="_blank" title="xaphoenix">xaphoenix</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=Rylynnn_活活被校赛累死了w&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Rylynnn. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2826829144" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Rylynnn" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:rylynnn0321@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Rylynnn">Rylynnn</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"Rylyn"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
