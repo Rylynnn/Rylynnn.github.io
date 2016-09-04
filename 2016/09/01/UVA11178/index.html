@@ -1,0 +1,555 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>UVA 11178 Morley&#39;s Theorem | Rylynnn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Rylynnn">
+    
+
+    
+    <meta name="description" content="题意给定一个三角形，求每个角的两条三等分线相交的三个点的坐标。
+分析计算几何基础，已知三个点的坐标，由向量可以求出角度，并直接旋转三条边得到六条三等分线，直接两两求交点就行了。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UVA 11178 Morley's Theorem">
+<meta property="og:url" content="http://yoursite.com/2016/09/01/UVA11178/index.html">
+<meta property="og:site_name" content="Rylynnn">
+<meta property="og:description" content="题意给定一个三角形，求每个角的两条三等分线相交的三个点的坐标。
+分析计算几何基础，已知三个点的坐标，由向量可以求出角度，并直接旋转三条边得到六条三等分线，直接两两求交点就行了。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960">
+<meta property="og:updated_time" content="2016-08-31T16:17:50.929Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UVA 11178 Morley's Theorem">
+<meta name="twitter:description" content="题意给定一个三角形，求每个角的两条三等分线相交的三个点的坐标。
+分析计算几何基础，已知三个点的坐标，由向量可以求出角度，并直接旋转三条边得到六条三等分线，直接两两求交点就行了。
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Rylynnn" title="Rylynnn"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Rylynnn">Rylynnn</a></h1>
+				<h2 class="blog-motto">To be better</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/categories">Categories</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/01/UVA11178/" title="UVA 11178 Morley&#39;s Theorem" itemprop="url">UVA 11178 Morley&#39;s Theorem</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-31T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-09-01</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>给定一个三角形，求每个角的两条三等分线相交的三个点的坐标。</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>计算几何基础，已知三个点的坐标，由向量可以求出角度，并直接旋转三条边得到六条三等分线，直接两两求交点就行了。</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">#define MaX <span class="number">500008</span></span><br><span class="line">#define ll long long</span><br><span class="line">using namespace std<span class="comment">;</span></span><br><span class="line">const double eps=<span class="number">1</span>e-<span class="number">10</span><span class="comment">;</span></span><br><span class="line">struct Point&#123;</span><br><span class="line">    double x,y<span class="comment">;</span></span><br><span class="line"><span class="label">    Point(double x=0,double y=0):</span>x(x),y(y)&#123;&#125;</span><br><span class="line">&#125;<span class="comment">;</span></span><br><span class="line">typedef Point Vector<span class="comment">;</span></span><br><span class="line">//向量加减</span><br><span class="line">Vector operator + (Vector <span class="literal">a</span>,Vector b)&#123;</span><br><span class="line">    <span class="keyword">return</span> Vector(<span class="literal">a</span>.x+b.x,<span class="literal">a</span>.y+b.y)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">Vector operator - (Vector <span class="literal">a</span>,Vector b)&#123;</span><br><span class="line">    <span class="keyword">return</span> Vector(<span class="literal">a</span>.x-b.x,<span class="literal">a</span>.y-b.y)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//向量乘除数值</span><br><span class="line">Vector operator * (Vector <span class="literal">a</span>,double b)&#123;</span><br><span class="line">    <span class="keyword">return</span> Vector(<span class="literal">a</span>.x*b,<span class="literal">a</span>.y*b)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">Vector operator / (Vector <span class="literal">a</span>,double b)&#123;</span><br><span class="line">    <span class="keyword">return</span> Vector(<span class="literal">a</span>.x/b,<span class="literal">a</span>.y/b)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//eps控制，重载&lt;和==</span><br><span class="line">int dcmp(double x)&#123;</span><br><span class="line">    <span class="keyword">if</span>(fabs(x)&lt;eps)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span><span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line"><span class="label">        return x&lt;0?-1:</span><span class="number">1</span><span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">bool operator &lt;(const Point&amp; <span class="literal">a</span>,const Point&amp; b)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">a</span>.x-b.x&lt;eps||(dcmp(<span class="literal">a</span>.x-b.x)==<span class="number">0</span>&amp;&amp;<span class="literal">a</span>.y-b.y&lt;eps)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">bool  operator == (const Point&amp; <span class="literal">a</span>,const Point&amp; b)&#123;</span><br><span class="line">    <span class="keyword">return</span> dcmp(<span class="literal">a</span>.x-b.x)==<span class="number">0</span>&amp;&amp;dcmp(<span class="literal">a</span>.y-b.y)==<span class="number">0</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//计算<span class="literal">a</span>的极角</span><br><span class="line">double AngleX(Vector <span class="literal">a</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> atan2(<span class="literal">a</span>.y,<span class="literal">a</span>.x)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//向量点乘</span><br><span class="line">double Dot(Vector <span class="literal">a</span>,Vector b)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">a</span>.x*b.x+<span class="literal">a</span>.y*b.y<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//向量<span class="literal">a</span>的模</span><br><span class="line">double Length(Vector <span class="literal">a</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> (sqrt(Dot(<span class="literal">a</span>,<span class="literal">a</span>)))<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//两个向量的夹角</span><br><span class="line">double Angle(Vector <span class="literal">a</span>,Vector b)&#123;</span><br><span class="line">    <span class="keyword">return</span> acos(Dot(<span class="literal">a</span>,b)/Length(<span class="literal">a</span>)/Length(b))<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//向量叉乘</span><br><span class="line">double Cross(Vector <span class="literal">a</span>,Vector b)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">a</span>.x*b.y-<span class="literal">a</span>.y*b.x<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//三点组成的面积</span><br><span class="line">double Area2(Point <span class="literal">a</span>,Point b,Point c)&#123;</span><br><span class="line">    <span class="keyword">return</span> Cross(b-<span class="literal">a</span>,c-<span class="literal">a</span>)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//将向量<span class="literal">a</span>旋转rad度，rad是弧度</span><br><span class="line">Vector Rotate(Vector <span class="literal">a</span>,double rad)&#123;</span><br><span class="line">    <span class="keyword">return</span> Vector(<span class="literal">a</span>.x*cos(rad)-<span class="literal">a</span>.y*sin(rad),<span class="literal">a</span>.x*sin(rad)+<span class="literal">a</span>.y*cos(rad))<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//计算向量的单位法向量，先判<span class="literal">a</span>不是零向量</span><br><span class="line">Vector Normal(Vector <span class="literal">a</span>)&#123;</span><br><span class="line">    double L=Length(<span class="literal">a</span>)<span class="comment">;</span></span><br><span class="line">    <span class="keyword">return</span> Vector(-<span class="literal">a</span>.y/L,<span class="literal">a</span>.x/L)<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//计算两个直线交点，直线方程为p+tv，q+tw，先判Cross(v,w)!=<span class="number">0</span></span><br><span class="line">Point GetLineInter(Point p,Vector v,Point q,Vector w)&#123;</span><br><span class="line">    Vector u=p-q<span class="comment">;</span></span><br><span class="line">    double t=Cross(w,u)/Cross(v,w)<span class="comment">;</span></span><br><span class="line">    <span class="keyword">return</span> p+v*t<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//点p到直线ab的距离</span><br><span class="line">double DisToL(Point p,Point <span class="literal">a</span>,Point b)&#123;</span><br><span class="line">    Vector v1=b-<span class="literal">a</span>,v2=p-<span class="literal">a</span><span class="comment">;</span></span><br><span class="line">    <span class="keyword">return</span> fabs(Cross(v1,v2))/Length(v1)<span class="comment">;//不取绝对值为有向距离</span></span><br><span class="line">&#125;</span><br><span class="line">//点p到线段ab的距离</span><br><span class="line">double DisToS(Point p,Point <span class="literal">a</span>,Point b)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">a</span>==b)&#123;</span><br><span class="line">        <span class="keyword">return</span> Length(p-<span class="literal">a</span>)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    Vector v1=b-<span class="literal">a</span>,v2=p-<span class="literal">a</span>,v3=p-b<span class="comment">;</span></span><br><span class="line">    <span class="keyword">if</span>(dcmp(Dot(v1,v2)&lt;<span class="number">0</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> Length(v2)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(dcmp(Dot(v1,v3))&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> Length(v3)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fabs(Cross(v1,v2))/Length(v1)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//点p在直线ab上的投影</span><br><span class="line">Point GetLineProj(Point p,Point <span class="literal">a</span>,Point b)&#123;</span><br><span class="line">    Vector v=b-<span class="literal">a</span><span class="comment">;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">a</span>+v*(Dot(v,p-<span class="literal">a</span>)/Dot(v,v))<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//线段ab,cd相交判定（交点不能为两个端点）</span><br><span class="line">bool segProInter(Point <span class="literal">a</span>,Point b,Point c,Point d)&#123;</span><br><span class="line">    double p1=Cross(b-<span class="literal">a</span>,c-<span class="literal">a</span>),p2=Cross(b-<span class="literal">a</span>,d-<span class="literal">a</span>),</span><br><span class="line">           p3=Cross(d-c,<span class="literal">a</span>-c),p4=Cross(d-c,b-c)<span class="comment">;</span></span><br><span class="line">    <span class="keyword">return</span> dcmp(p1)*dcmp(p2)&lt;<span class="number">0</span>&amp;&amp;dcmp(p3)*dcmp(p4)&lt;<span class="number">0</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">//如果相交允许为端点，直接判一下是否有端点在另一条直线上</span><br><span class="line">bool OnSeg(Point p,Point <span class="literal">a</span>,Point b)&#123;</span><br><span class="line">    <span class="keyword">return</span> dcmp(Cross(<span class="literal">a</span>-p,b-p))==<span class="number">0</span>&amp;&amp;dcmp(Dot(<span class="literal">a</span>-p,b-p))&lt;<span class="number">0</span><span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int t<span class="comment">;</span></span><br><span class="line">    Point <span class="literal">a</span>,b,c,d,f,e<span class="comment">;</span></span><br><span class="line">    Vector bd,bf,cd,ce,ae,af<span class="comment">;</span></span><br><span class="line">    scanf(<span class="string">"%d"</span>,&amp;t)<span class="comment">;</span></span><br><span class="line">    for(int i=<span class="number">0</span><span class="comment">;i&lt;t;i++)&#123;</span></span><br><span class="line">        scanf(<span class="string">"%lf%lf%lf%lf%lf%lf"</span>,&amp;<span class="literal">a</span>.x,&amp;<span class="literal">a</span>.y,&amp;b.x,&amp;b.y,&amp;c.x,&amp;c.y)<span class="comment">;</span></span><br><span class="line">        bd=Rotate((c-b),Angle(c-b,<span class="literal">a</span>-b)/<span class="number">3</span>)<span class="comment">;</span></span><br><span class="line">        bf=Rotate((c-b),<span class="number">2</span>*(Angle(c-b,<span class="literal">a</span>-b)/<span class="number">3</span>))<span class="comment">;</span></span><br><span class="line">        cd=Rotate((<span class="literal">a</span>-c),<span class="number">2</span>*(Angle(<span class="literal">a</span>-c,b-c)/<span class="number">3</span>))<span class="comment">;</span></span><br><span class="line">        ce=Rotate((<span class="literal">a</span>-c),Angle(<span class="literal">a</span>-c,b-c)/<span class="number">3</span>)<span class="comment">;</span></span><br><span class="line">        ae=Rotate((b-<span class="literal">a</span>),<span class="number">2</span>*(Angle(b-<span class="literal">a</span>,c-<span class="literal">a</span>)/<span class="number">3</span>))<span class="comment">;</span></span><br><span class="line">        af=Rotate((b-<span class="literal">a</span>),Angle(b-<span class="literal">a</span>,c-<span class="literal">a</span>)/<span class="number">3</span>)<span class="comment">;</span></span><br><span class="line">        d=GetLineInter(b,bd,c,cd)<span class="comment">;</span></span><br><span class="line">        e=GetLineInter(<span class="literal">a</span>,ae,c,ce)<span class="comment">;</span></span><br><span class="line">        f=GetLineInter(<span class="literal">a</span>,af,b,bf)<span class="comment">;</span></span><br><span class="line">        printf(<span class="string">"%lf %lf %lf %lf %lf %lf\n"</span>,d.x,d.y,e.x,e.y,f.x,f.y)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categorie/计算几何/">计算几何</a>►<a class="article-category-link" href="/categorie/计算几何/向量/">向量</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/UVA/">UVA</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/09/01/UVA11178/" data-title="UVA 11178 Morley&#39;s Theorem | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/08/02/FFT/"  title="">
+ <strong>下一篇：</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2016/09/01/UVA11178/" data-title="UVA 11178 Morley's Theorem" data-url="http://yoursite.com/2016/09/01/UVA11178/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="Rylynnn" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
+
+  
+<div class="category-block">
+  <h3 class="asidetitle">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/">字符串</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/后缀数组/">后缀数组</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉函数/">欧拉函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/">群论</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/置换群/">置换群</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/">计算几何</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/向量/">向量</a><span class="category-list-count">1</span></li></ul></li></ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>15</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/USACO/" title="USACO">USACO<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/POJ/" title="POJ">POJ<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2014Muti-9/" title="2014Muti 9">2014Muti 9<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Code-Forces/" title="Code Forces">Code Forces<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UVA/" title="UVA">UVA<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/XDU/" title="XDU">XDU<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ZOJ/" title="ZOJ">ZOJ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2016Muti-4/" title="2016Muti 4">2016Muti 4<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2014Muti-1/" title="2014Muti 1">2014Muti 1<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2013-南京邀请赛/" title="2013 南京邀请赛">2013 南京邀请赛<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/2013-通化邀请赛/" title="2013 通化邀请赛">2013 通化邀请赛<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Codevs/" title="Codevs">Codevs<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/idealism_xxm" target="_blank" title="idealism">idealism</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/xaphoenix" target="_blank" title="xaphoenix">xaphoenix</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=Rylynnn_活活被校赛累死了w&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Rylynnn. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2826829144" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Rylynnn" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:rylynnn0321@163.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Rylynnn">Rylynnn</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"Rylyn"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
