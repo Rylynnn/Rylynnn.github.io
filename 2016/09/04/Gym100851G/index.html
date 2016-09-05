@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>HDU1372 Knight Moves | Rylynnn</title>
+    <title>Gym 100851G Generators | Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Rylynnn">
@@ -12,24 +12,21 @@
 
     
     <meta name="description" content="原题
-题意经典的马步移动，刚开始写完结果竟然样例都没过，然后发现是走的是“日”字形= =。
-分析简单BFS每个条件，八个状态，第一次到达某一点就把当前这一点标记为经过，并从他的源头那一点更新当前点的最小步数，直到找到第b点。
-12345678910111213141516171819202122232425262728293031323334353637383940414243#include &amp;">
+题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
+分析首先：这个数列给出x0,a,b,c四个参数，有$$x{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU1372 Knight Moves">
-<meta property="og:url" content="http://yoursite.com/2016/07/24/HDU1372/index.html">
+<meta property="og:title" content="Gym 100851G Generators">
+<meta property="og:url" content="http://yoursite.com/2016/09/04/Gym100851G/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
-题意经典的马步移动，刚开始写完结果竟然样例都没过，然后发现是走的是“日”字形= =。
-分析简单BFS每个条件，八个状态，第一次到达某一点就把当前这一点标记为经过，并从他的源头那一点更新当前点的最小步数，直到找到第b点。
-12345678910111213141516171819202122232425262728293031323334353637383940414243#include &amp;">
-<meta property="og:updated_time" content="2016-07-24T08:12:23.322Z">
+题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
+分析首先：这个数列给出x0,a,b,c四个参数，有$$x{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值">
+<meta property="og:updated_time" content="2016-09-05T18:13:09.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU1372 Knight Moves">
+<meta name="twitter:title" content="Gym 100851G Generators">
 <meta name="twitter:description" content="原题
-题意经典的马步移动，刚开始写完结果竟然样例都没过，然后发现是走的是“日”字形= =。
-分析简单BFS每个条件，八个状态，第一次到达某一点就把当前这一点标记为经过，并从他的源头那一点更新当前点的最小步数，直到找到第b点。
-12345678910111213141516171819202122232425262728293031323334353637383940414243#include &amp;">
+题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
+分析首先：这个数列给出x0,a,b,c四个参数，有$$x{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -89,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/24/HDU1372/" title="HDU1372 Knight Moves" itemprop="url">HDU1372 Knight Moves</a>
+      <a href="/2016/09/04/Gym100851G/" title="Gym 100851G Generators" itemprop="url">Gym 100851G Generators</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-23T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-07-24</time>
+    <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-09-04</time>
     
   </p>
 </header>
@@ -109,10 +106,11 @@
 		
 		</div>
 		
-		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1372" target="_blank" rel="external">原题</a></p>
-<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>经典的马步移动，刚开始写完结果竟然样例都没过，然后发现是走的是“日”字形= =。</p>
-<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>简单BFS每个条件，八个状态，第一次到达某一点就把当前这一点标记为经过，并从他的源头那一点更新当前点的最小步数，直到找到第b点。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> node&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">&#125;knight;</span><br><span class="line"><span class="keyword">int</span> mov[<span class="number">8</span>][<span class="number">2</span>]=&#123;-<span class="number">2</span>,-<span class="number">1</span>,-<span class="number">2</span>,<span class="number">1</span>,-<span class="number">1</span>,-<span class="number">2</span>,-<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,-<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,-<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">10</span>][<span class="number">10</span>],d[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> ax,<span class="keyword">int</span> ay,<span class="keyword">int</span> bx,<span class="keyword">int</span> by)</span></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;knight&gt; q;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="built_in">memset</span>(d,<span class="number">0</span>,<span class="keyword">sizeof</span>(d));</span><br><span class="line">    knight a,now,nn;</span><br><span class="line">    a.x=ax,a.y=ay;</span><br><span class="line">    q.push(a);</span><br><span class="line">    vis[a.x][a.y]=<span class="number">1</span>;</span><br><span class="line">    d[a.x][a.y]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        now=q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(now.x==bx&amp;&amp;now.y==by)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">            nn.x=now.x+mov[i][<span class="number">0</span>];</span><br><span class="line">            nn.y=now.y+mov[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(nn.x&gt;=<span class="number">0</span>&amp;&amp;nn.x&lt;<span class="number">8</span>&amp;&amp;nn.y&gt;=<span class="number">0</span>&amp;&amp;nn.y&lt;<span class="number">8</span>&amp;&amp;vis[nn.x][nn.y]==<span class="number">0</span>)&#123;</span><br><span class="line">                q.push(nn);</span><br><span class="line">                vis[nn.x][nn.y]=<span class="number">1</span>;</span><br><span class="line">                d[nn.x][nn.y]=d[now.x][now.y]+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a,b;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b)&#123;</span><br><span class="line">        bfs(a[<span class="number">0</span>]-<span class="string">'a'</span>,a[<span class="number">1</span>]-<span class="string">'0'</span>-<span class="number">1</span>,b[<span class="number">0</span>]-<span class="string">'a'</span>,b[<span class="number">1</span>]-<span class="string">'0'</span>-<span class="number">1</span>);</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"To get from "</span>&lt;&lt;a&lt;&lt;<span class="string">" to "</span>&lt;&lt;b&lt;&lt;<span class="string">" takes "</span>&lt;&lt;d[b[<span class="number">0</span>]-<span class="string">'a'</span>][b[<span class="number">1</span>]-<span class="string">'0'</span>-<span class="number">1</span>]&lt;&lt;<span class="string">" knight moves."</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p><a href="http://codeforces.com/gym/100851/attachments" target="_blank" rel="external">原题</a></p>
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>首先：这个数列给出x<em>0,a,b,c四个参数，有$$x</em>{n+1}=(a<em>x_n+b)\%c$$定会形成循环节，但要注意的是<em>*这个循环节可能前几个数值不在循环节的数以内</em></em>，所以需要标记一下。<br>先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值。接下来先取每个序列最大的值，如果%K不为0则为答案。否则把其中一个换成次优值。因为前面满足%K不相等所以只用换一个。</p>
+<p>我们可以不存次大值，只存n个数列中满足条件的次大值和最大值的差值就行了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1000007</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MOD <span class="number">1000000007</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> INF <span class="number">0x3f3f3f3f</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">struct</span> node&#123;</span><br><span class="line">    <span class="keyword">int</span> num,xx;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node&amp; a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> xx&gt;a.xx;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;x[<span class="number">1007</span>],ans[<span class="number">10007</span>];</span><br><span class="line"><span class="keyword">struct</span> nnode&#123;</span><br><span class="line">    <span class="keyword">int</span> num,xx,nnum;</span><br><span class="line">&#125;;</span><br><span class="line">nnode minm;</span><br><span class="line"><span class="keyword">bool</span> p[<span class="number">1007</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("generators.in","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("generators.out","w",stdout);</span></span><br><span class="line">    <span class="keyword">int</span> n,k,a,b,c;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k)!=EOF)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(ans,<span class="number">0</span>,<span class="keyword">sizeof</span>(ans));</span><br><span class="line">        minm.xx=INF;</span><br><span class="line">        minm.num=-<span class="number">1</span>;</span><br><span class="line">        minm.nnum=-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">memset</span>(x,<span class="number">0</span>,<span class="keyword">sizeof</span>(x));</span><br><span class="line">            <span class="built_in">memset</span>(p,<span class="literal">false</span>,<span class="keyword">sizeof</span>(p));</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;x[<span class="number">0</span>].xx,&amp;a,&amp;b,&amp;c);</span><br><span class="line">            <span class="keyword">int</span> m=<span class="number">0</span>;</span><br><span class="line">            x[<span class="number">0</span>].num=<span class="number">0</span>;</span><br><span class="line">            p[x[<span class="number">0</span>].xx]=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">while</span>(!p[(a*x[m].xx+b)%c])&#123;<span class="comment">//找循环节不能是和第一个相同就停止寻找，因为可能前几个数值不在循环节的数以内</span></span><br><span class="line">                m++;</span><br><span class="line">                x[m].num=m;</span><br><span class="line">                x[m].xx=(a*x[m-<span class="number">1</span>].xx+b)%c;</span><br><span class="line">                p[x[m].xx]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            m++;</span><br><span class="line">            sort(x,x+m);</span><br><span class="line">            ans[i]=x[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> now=x[<span class="number">0</span>].xx%k;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(x[j].xx%k!=now)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(x[<span class="number">0</span>].xx-x[j].xx&lt;minm.xx)&#123;</span><br><span class="line">                        minm.num=x[j].num;</span><br><span class="line">                        minm.nnum=i;</span><br><span class="line">                        minm.xx=x[<span class="number">0</span>].xx-x[j].xx;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> aans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            aans+=ans[i].xx;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(aans%k==<span class="number">0</span>&amp;&amp;minm.xx==INF)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(aans%k==<span class="number">0</span>)&#123;</span><br><span class="line">            aans-=minm.xx;</span><br><span class="line">            ans[minm.nnum].num=minm.num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,aans);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[<span class="number">0</span>].num);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>,ans[i].num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,13 +118,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categorie/搜索/">搜索</a>►<a class="article-category-link" href="/categorie/搜索/普通搜索/">普通搜索</a>►<a class="article-category-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a>
+  <a class="article-category-link" href="/categorie/数学/">数学</a>►<a class="article-category-link" href="/categorie/数学/数论/">数论</a>►<a class="article-category-link" href="/categorie/数学/数论/逆元/">逆元</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/HDU/">HDU</a>
+  <span></span> <a href="/tags/HDU/">HDU</a><a href="/tags/SWERC-2011/">SWERC 2011</a>
   </div>
 
 </div>
@@ -135,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/07/24/HDU1372/" data-title="HDU1372 Knight Moves | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/09/04/Gym100851G/" data-title="Gym 100851G Generators | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,18 +147,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/07/24/HDU2717/" title="HDU2717 Catch That Cow">
+ <a href="/2016/09/06/O（n）求逆元/" title="逆元和欧拉函数">
   <strong>上一篇：</strong><br/>
   <span>
-  HDU2717 Catch That Cow</span>
+  逆元和欧拉函数</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/07/20/hello-world/"  title="Hello World">
+<a href="/2016/09/04/HDU4196/"  title="HDU4196 Remoteland">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>HDU4196 Remoteland
 </span>
 </a>
 </div>
@@ -169,7 +167,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/24/HDU1372/" data-title="HDU1372 Knight Moves" data-url="http://yoursite.com/2016/07/24/HDU1372/"></div>
+	<div class="ds-thread" data-thread-key="2016/09/04/Gym100851G/" data-title="Gym 100851G Generators" data-url="http://yoursite.com/2016/09/04/Gym100851G/"></div>
 </section>
 
 
