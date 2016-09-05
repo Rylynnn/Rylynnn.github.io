@@ -2,7 +2,7 @@
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
   
     <title>Gym 100851G Generators | Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -13,20 +13,20 @@
     
     <meta name="description" content="原题
 题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
-分析首先：这个数列给出x0,a,b,c四个参数，有$$x{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值">
+分析首先：这个数列给出x_0,a,b,c四个参数，有$$x_{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gym 100851G Generators">
 <meta property="og:url" content="http://yoursite.com/2016/09/04/Gym100851G/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
 题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
-分析首先：这个数列给出x0,a,b,c四个参数，有$$x{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值">
+分析首先：这个数列给出x_0,a,b,c四个参数，有$$x_{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次">
 <meta property="og:updated_time" content="2016-09-05T18:13:09.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gym 100851G Generators">
 <meta name="twitter:description" content="原题
 题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
-分析首先：这个数列给出x0,a,b,c四个参数，有$$x{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值">
+分析首先：这个数列给出x_0,a,b,c四个参数，有$$x_{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循环节的数以内，所以需要标记一下。先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -38,11 +38,11 @@
     <link rel="apple-touch-icon" href="/img/pacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
   <body>
-    <header>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
       
 <div>
 		
@@ -108,7 +108,7 @@
 		
 		<p><a href="http://codeforces.com/gym/100851/attachments" target="_blank" rel="external">原题</a></p>
 <h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？</p>
-<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>首先：这个数列给出x<em>0,a,b,c四个参数，有$$x</em>{n+1}=(a<em>x_n+b)\%c$$定会形成循环节，但要注意的是<em>*这个循环节可能前几个数值不在循环节的数以内</em></em>，所以需要标记一下。<br>先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值。接下来先取每个序列最大的值，如果%K不为0则为答案。否则把其中一个换成次优值。因为前面满足%K不相等所以只用换一个。</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>首先：这个数列给出x_0,a,b,c四个参数，有$$x_{n+1}=(a<em>x_n+b)\%c$$定会形成循环节，但要注意的是<em>*这个循环节可能前几个数值不在循环节的数以内</em></em>，所以需要标记一下。<br>先暴力把每个数列能够获得的值都求出来。存下每个数列的最大值，和一个和最大值%K不相等的次大值。接下来先取每个序列最大的值，如果%K不为0则为答案。否则把其中一个换成次优值。因为前面满足%K不相等所以只用换一个。</p>
 <p>我们可以不存次大值，只存n个数列中满足条件的次大值和最大值的差值就行了。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1000007</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MOD <span class="number">1000000007</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> INF <span class="number">0x3f3f3f3f</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">struct</span> node&#123;</span><br><span class="line">    <span class="keyword">int</span> num,xx;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node&amp; a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> xx&gt;a.xx;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;x[<span class="number">1007</span>],ans[<span class="number">10007</span>];</span><br><span class="line"><span class="keyword">struct</span> nnode&#123;</span><br><span class="line">    <span class="keyword">int</span> num,xx,nnum;</span><br><span class="line">&#125;;</span><br><span class="line">nnode minm;</span><br><span class="line"><span class="keyword">bool</span> p[<span class="number">1007</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//freopen("generators.in","r",stdin);</span></span><br><span class="line">    <span class="comment">//freopen("generators.out","w",stdout);</span></span><br><span class="line">    <span class="keyword">int</span> n,k,a,b,c;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;k)!=EOF)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(ans,<span class="number">0</span>,<span class="keyword">sizeof</span>(ans));</span><br><span class="line">        minm.xx=INF;</span><br><span class="line">        minm.num=-<span class="number">1</span>;</span><br><span class="line">        minm.nnum=-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">memset</span>(x,<span class="number">0</span>,<span class="keyword">sizeof</span>(x));</span><br><span class="line">            <span class="built_in">memset</span>(p,<span class="literal">false</span>,<span class="keyword">sizeof</span>(p));</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;x[<span class="number">0</span>].xx,&amp;a,&amp;b,&amp;c);</span><br><span class="line">            <span class="keyword">int</span> m=<span class="number">0</span>;</span><br><span class="line">            x[<span class="number">0</span>].num=<span class="number">0</span>;</span><br><span class="line">            p[x[<span class="number">0</span>].xx]=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">while</span>(!p[(a*x[m].xx+b)%c])&#123;<span class="comment">//找循环节不能是和第一个相同就停止寻找，因为可能前几个数值不在循环节的数以内</span></span><br><span class="line">                m++;</span><br><span class="line">                x[m].num=m;</span><br><span class="line">                x[m].xx=(a*x[m-<span class="number">1</span>].xx+b)%c;</span><br><span class="line">                p[x[m].xx]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            m++;</span><br><span class="line">            sort(x,x+m);</span><br><span class="line">            ans[i]=x[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> now=x[<span class="number">0</span>].xx%k;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(x[j].xx%k!=now)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(x[<span class="number">0</span>].xx-x[j].xx&lt;minm.xx)&#123;</span><br><span class="line">                        minm.num=x[j].num;</span><br><span class="line">                        minm.nnum=i;</span><br><span class="line">                        minm.xx=x[<span class="number">0</span>].xx-x[j].xx;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> aans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            aans+=ans[i].xx;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(aans%k==<span class="number">0</span>&amp;&amp;minm.xx==INF)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(aans%k==<span class="number">0</span>)&#123;</span><br><span class="line">            aans-=minm.xx;</span><br><span class="line">            ans[minm.nnum].num=minm.num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,aans);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[<span class="number">0</span>].num);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">" %d"</span>,ans[i].num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
@@ -557,13 +557,57 @@ var _hmt = _hmt || [];
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 <!-- MathJax End -->
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End -->
+<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
   </body>
 </html>
