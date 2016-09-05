@@ -78,6 +78,28 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
+    <a href="/2016/09/04/HDU4196/" title="HDU4196 Remoteland" itemprop="url">
+  
+    <h1 itemprop="name">HDU4196 Remoteland</h1>
+    
+     
+           <p itemprop="description" >原题
+题意给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数
+分析首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/</p>
+        
+    
+    <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
     <a href="/2016/09/01/UVA11178/" title="UVA 11178 Morley&#39;s Theorem" itemprop="url">
   
     <h1 itemprop="name">UVA 11178 Morley&#39;s Theorem</h1>
@@ -120,34 +142,12 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/28/Codevs1098/" title="Codevs 1098 均分纸牌" itemprop="url">
+    <a href="/2016/07/28/后缀数组/" title="后缀数组" itemprop="url">
   
-    <h1 itemprop="name">Codevs 1098 均分纸牌</h1>
+    <h1 itemprop="name">后缀数组</h1>
     
      
-           <p itemprop="description" >题意有N堆纸牌，每堆上有若干张，但纸牌总数必为N的倍数。可以在任一堆上取若于张纸牌，然后移动。移牌规则为：在编号为 1 堆上取的纸牌，只能移到编号为 2 的堆上；在编号为 N 的堆上取的纸牌，只能移到编号为N-1的堆上；其他堆上取的纸牌，可以移到相邻左边或右边的堆上。现在要求找出</p>
-        
-    
-    <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/28/HDU5769/" title="HDU5769 Fast Matrix Calculation" itemprop="url">
-  
-    <h1 itemprop="name">HDU5769 Fast Matrix Calculation</h1>
-    
-     
-           <p itemprop="description" >原题
-题意给你一个字符和一个字符串，问这个字符串的所有子串中包含这个字符的字串有多少个。
-分析当时看到的第一想法就是后缀数组，奈何只是去年区域赛接触了一下，忘得差不多了，也没有系统的写过运用的专题，所以刚开始还想的是用后缀自动机这个字符跑后缀自动机，但是对于每个字串，是包含字符又</p>
+           <p itemprop="description" >定义后缀数组：后缀数组SA是一个一维数组，它保存1..n的某个排列SA[1]，SA[2]，……，SA[n]，并且保证 Suffix(SA[i])&amp;lt;Suffix(SA[i+1])。每个数组中存储的值为字典序为i的原字符串后缀在原串中的位置。</p>
         
     
     <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
@@ -186,12 +186,34 @@ f(0) = 0, f(1) = 1, f(2) = 2.
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/28/后缀数组/" title="后缀数组" itemprop="url">
+    <a href="/2016/07/28/Codevs1098/" title="Codevs 1098 均分纸牌" itemprop="url">
   
-    <h1 itemprop="name">后缀数组</h1>
+    <h1 itemprop="name">Codevs 1098 均分纸牌</h1>
     
      
-           <p itemprop="description" >定义后缀数组：后缀数组SA是一个一维数组，它保存1..n的某个排列SA[1]，SA[2]，……，SA[n]，并且保证 Suffix(SA[i])&amp;lt;Suffix(SA[i+1])。每个数组中存储的值为字典序为i的原字符串后缀在原串中的位置。</p>
+           <p itemprop="description" >题意有N堆纸牌，每堆上有若干张，但纸牌总数必为N的倍数。可以在任一堆上取若于张纸牌，然后移动。移牌规则为：在编号为 1 堆上取的纸牌，只能移到编号为 2 的堆上；在编号为 N 的堆上取的纸牌，只能移到编号为N-1的堆上；其他堆上取的纸牌，可以移到相邻左边或右边的堆上。现在要求找出</p>
+        
+    
+    <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/07/28/HDU5769/" title="HDU5769 Fast Matrix Calculation" itemprop="url">
+  
+    <h1 itemprop="name">HDU5769 Fast Matrix Calculation</h1>
+    
+     
+           <p itemprop="description" >原题
+题意给你一个字符和一个字符串，问这个字符串的所有子串中包含这个字符的字串有多少个。
+分析当时看到的第一想法就是后缀数组，奈何只是去年区域赛接触了一下，忘得差不多了，也没有系统的写过运用的专题，所以刚开始还想的是用后缀自动机这个字符跑后缀自动机，但是对于每个字串，是包含字符又</p>
         
     
     <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
@@ -251,29 +273,6 @@ f(0) = 0, f(1) = 1, f(2) = 2.
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/24/HDU1548/" title="HDU1548 A strange lift" itemprop="url">
-  
-    <h1 itemprop="name">HDU1548 A strange lift</h1>
-    
-     
-           <p itemprop="description" >原题
-题意一个电梯可以从第i层上到i+ki层，或者从第i层下到i-ki层，问从第a层到第b层，最少通过多少步上下能到达。
-分析简单BFS每个条件，两个状态，第一次到达某一层就把当前这一层标记为经过，并从他的源头那一层更新当前层的最小步数，直到找到第b层。
-123456789101</p>
-        
-    
-    <time datetime="2016-07-23T16:00:00.000Z" itemprop="datePublished">2016-07-24</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
     <a href="/2016/07/24/HDU2717/" title="HDU2717 Catch That Cow" itemprop="url">
   
     <h1 itemprop="name">HDU2717 Catch That Cow</h1>
@@ -319,7 +318,7 @@ f(0) = 0, f(1) = 1, f(2) = 2.
   
 <div class="category-block">
   <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/">字符串</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/后缀数组/">后缀数组</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉函数/">欧拉函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/">群论</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/置换群/">置换群</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/">计算几何</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/向量/">向量</a><span class="category-list-count">1</span></li></ul></li></ul>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/">字符串</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/后缀数组/">后缀数组</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉函数/">欧拉函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/逆元/">逆元</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/逆元和欧拉函数/">逆元和欧拉函数</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/">群论</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/置换群/">置换群</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/">计算几何</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/向量/">向量</a><span class="category-list-count">1</span></li></ul></li></ul>
 </div>
 
 
@@ -329,11 +328,11 @@ f(0) = 0, f(1) = 1, f(2) = 2.
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/HDU/" title="HDU">HDU<sup>15</sup></a></li>
+				<li><a href="/tags/HDU/" title="HDU">HDU<sup>16</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>9</sup></a></li>
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>10</sup></a></li>
 			
 		
 			
@@ -353,11 +352,11 @@ f(0) = 0, f(1) = 1, f(2) = 2.
 			
 		
 			
-				<li><a href="/tags/UVA/" title="UVA">UVA<sup>1</sup></a></li>
+				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
+				<li><a href="/tags/UVA/" title="UVA">UVA<sup>1</sup></a></li>
 			
 		
 			
@@ -373,7 +372,7 @@ f(0) = 0, f(1) = 1, f(2) = 2.
 			
 		
 			
-				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
+				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
 			
 		
 			
@@ -386,6 +385,10 @@ f(0) = 0, f(1) = 1, f(2) = 2.
 		
 			
 				<li><a href="/tags/2013-通化邀请赛/" title="2013 通化邀请赛">2013 通化邀请赛<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/SWERC-2011/" title="SWERC 2011">SWERC 2011<sup>1</sup></a></li>
 			
 		
 			

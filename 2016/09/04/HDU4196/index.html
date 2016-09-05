@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>HDU4869 Turn the pokers | Rylynnn</title>
+    <title>HDU4196 Remoteland | Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Rylynnn">
@@ -12,21 +12,21 @@
 
     
     <meta name="description" content="原题
-题意给你一个长度为m的01序列，做n次翻转，每次翻转任意Xi个子序列，问最终结果有多少种情况。
-分析">
+题意给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数
+分析首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/(p^3)]+……求出所有n!素因子的幂以后，对其中每个素因子的幂的个数进行判断，如果个数为奇数，则最后的fac[n]要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU4869 Turn the pokers">
-<meta property="og:url" content="http://yoursite.com/2016/07/19/HDU4869/index.html">
+<meta property="og:title" content="HDU4196 Remoteland">
+<meta property="og:url" content="http://yoursite.com/2016/09/04/HDU4196/index.html">
 <meta property="og:site_name" content="Rylynnn">
 <meta property="og:description" content="原题
-题意给你一个长度为m的01序列，做n次翻转，每次翻转任意Xi个子序列，问最终结果有多少种情况。
-分析">
-<meta property="og:updated_time" content="2016-07-20T05:45:03.095Z">
+题意给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数
+分析首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/(p^3)]+……求出所有n!素因子的幂以后，对其中每个素因子的幂的个数进行判断，如果个数为奇数，则最后的fac[n]要">
+<meta property="og:updated_time" content="2016-09-04T08:27:25.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU4869 Turn the pokers">
+<meta name="twitter:title" content="HDU4196 Remoteland">
 <meta name="twitter:description" content="原题
-题意给你一个长度为m的01序列，做n次翻转，每次翻转任意Xi个子序列，问最终结果有多少种情况。
-分析">
+题意给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数
+分析首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/(p^3)]+……求出所有n!素因子的幂以后，对其中每个素因子的幂的个数进行判断，如果个数为奇数，则最后的fac[n]要">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -86,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/19/HDU4869/" title="HDU4869 Turn the pokers" itemprop="url">HDU4869 Turn the pokers</a>
+      <a href="/2016/09/04/HDU4196/" title="HDU4196 Remoteland" itemprop="url">HDU4196 Remoteland</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-18T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-07-19</time>
+    <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-09-04</time>
     
   </p>
 </header>
@@ -106,22 +106,24 @@
 		
 		</div>
 		
-		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4869" target="_blank" rel="external">原题</a></p>
-<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>给你一个长度为m的01序列，做n次翻转，每次翻转任意Xi个子序列，问最终结果有多少种情况。</p>
-<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2>  
+		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4196" target="_blank" rel="external">原题</a></p>
+<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数</p>
+<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。<br>根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/(p^3)]+……求出所有n!素因子的幂以后，对其中每个素因子的幂的个数进行判断，如果个数为奇数，则最后的fac[n]要对除以这个素因子，将所有需要被除去的素因子乘起来存在ans中，最后因为(fac[n]/ans)%MOD，不能直接除，所以求出ans的逆元：ans^(MOD-1)，用这个结果乘以fac[n]就是最终的结果。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">10000007</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MOD <span class="number">1000000007</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll prime[MAXN],fac[MAXN], tot,n;</span><br><span class="line"><span class="keyword">bool</span> notPrime[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getPrime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    tot=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(notPrime, <span class="literal">false</span>, <span class="keyword">sizeof</span>(notPrime));</span><br><span class="line">    notPrime[<span class="number">0</span>] = notPrime[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">2</span> ; i &lt; MAXN ; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!notPrime[i]) &#123;</span><br><span class="line">            prime[tot++] = i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i &lt;&lt; <span class="number">1</span>; j &lt; MAXN ; j+=i) &#123;</span><br><span class="line">                notPrime[j] = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fac[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=MAXN;i++)&#123;</span><br><span class="line">        fac[i]=(fac[i-<span class="number">1</span>]*i)%MOD;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">getnum</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    ll now=n,sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(now)&#123;</span><br><span class="line">        sum+=(now/=x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">gcd</span><span class="params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (b&gt;<span class="number">0</span>)?gcd(b,a%b):a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll k)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    ll i;</span><br><span class="line">    ll result = k;</span><br><span class="line">    ll t = (ll)<span class="built_in">sqrt</span>(k*<span class="number">1.0</span>);</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>; i &lt;= t; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k%i==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result = result/i*(i-<span class="number">1l</span>l);</span><br><span class="line">            <span class="keyword">while</span>(k%i==<span class="number">0</span>)</span><br><span class="line">                k=k/i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k&gt;<span class="number">1l</span>l)</span><br><span class="line">        result = result/k*(k-<span class="number">1l</span>l);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">pow_mod</span><span class="params">(ll m,ll c,ll k)</span> </span>&#123;</span><br><span class="line">    ll b=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(c&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(c&amp;<span class="number">1</span>)</span><br><span class="line">            b=(b*m)%k;</span><br><span class="line">        c=c&gt;&gt;<span class="number">1</span> ;</span><br><span class="line">        m=(m*m)%k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    ll a;</span><br><span class="line">    getPrime();</span><br><span class="line">    <span class="comment">//cout&lt;&lt;tot;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%I64d"</span>,&amp;n)!=EOF)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ll ans=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;tot;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prime[i]&gt;n)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            a=getnum(prime[i]);</span><br><span class="line">            <span class="keyword">if</span>((a&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">                ans=(prime[i]*ans)%MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="comment">//cout&lt;&lt;ans&lt;&lt;' '&lt;&lt;prime[i]&lt;&lt;endl;</span></span><br><span class="line">        &#125;</span><br><span class="line">        ans=(fac[n]*pow_mod(ans,MOD-<span class="number">2</span>,MOD))%MOD;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categorie/数学/">数学</a>►<a class="article-category-link" href="/categorie/数学/数论/">数论</a>►<a class="article-category-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a>
+  <a class="article-category-link" href="/categorie/数学/">数学</a>►<a class="article-category-link" href="/categorie/数学/数论/">数论</a>►<a class="article-category-link" href="/categorie/数学/数论/逆元/">逆元</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/2014Muti-1/">2014Muti 1</a><a href="/tags/HDU/">HDU</a>
+  <span></span> <a href="/tags/HDU/">HDU</a><a href="/tags/SWERC-2011/">SWERC 2011</a>
   </div>
 
 </div>
@@ -130,7 +132,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/07/19/HDU4869/" data-title="HDU4869 Turn the pokers | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/09/04/HDU4196/" data-title="HDU4196 Remoteland | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -143,19 +145,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/19/目标任务/" title="目标任务">
-  <strong>上一篇：</strong><br/>
-  <span>
-  目标任务</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/19/概率与期望/"  title="概率与期望总结">
+<a href="/2016/09/01/UVA11178/"  title="UVA 11178 Morley&#39;s Theorem">
  <strong>下一篇：</strong><br/> 
- <span>概率与期望总结
+ <span>UVA 11178 Morley&#39;s Theorem
 </span>
 </a>
 </div>
@@ -164,7 +158,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/19/HDU4869/" data-title="HDU4869 Turn the pokers" data-url="http://yoursite.com/2016/07/19/HDU4869/"></div>
+	<div class="ds-thread" data-thread-key="2016/09/04/HDU4196/" data-title="HDU4196 Remoteland" data-url="http://yoursite.com/2016/09/04/HDU4196/"></div>
 </section>
 
 
