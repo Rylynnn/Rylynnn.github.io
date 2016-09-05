@@ -101,6 +101,29 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
+    <a href="/2016/07/24/HDU1372/" title="HDU1372 Knight Moves" itemprop="url">
+  
+    <h1 itemprop="name">HDU1372 Knight Moves</h1>
+    
+     
+           <p itemprop="description" >原题
+题意经典的马步移动，刚开始写完结果竟然样例都没过，然后发现是走的是“日”字形= =。
+分析简单BFS每个条件，八个状态，第一次到达某一点就把当前这一点标记为经过，并从他的源头那一点更新当前点的最小步数，直到找到第b点。
+123456789101112131415161718</p>
+        
+    
+    <time datetime="2016-07-23T16:00:00.000Z" itemprop="datePublished">2016-07-24</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
     <a href="/2016/07/20/hello-world/" title="Hello World" itemprop="url">
   
     <h1 itemprop="name">Hello World</h1>
@@ -121,12 +144,13 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/19/目标任务/" title="目标任务" itemprop="url">
+    <a href="/2016/07/19/算法目录/" title="算法目录" itemprop="url">
   
-    <h1 itemprop="name">目标任务</h1>
+    <h1 itemprop="name">算法目录</h1>
     
      
-           <p itemprop="description" >1.高斯消元2.概率dp3.母函数4.主席树5.极角排序6.二分7.三分8.倍增9.FFT10.置换群</p>
+           <p itemprop="description" >基础算法1.模拟2.乱搞3.贪心
+搜索1.普通搜索    1.BFS    2.DFS    3.双向BFS2.搜索优化    1.可行性剪枝    2.最优性剪枝    3.分支定界    4.meet in the middle3.智能搜索    1.A*搜索    2.粒子</p>
         
     
     <time datetime="2016-07-18T16:00:00.000Z" itemprop="datePublished">2016-07-19</time>
@@ -163,15 +187,12 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/19/概率与期望/" title="概率与期望总结" itemprop="url">
+    <a href="/2016/07/19/目标任务/" title="目标任务" itemprop="url">
   
-    <h1 itemprop="name">概率与期望总结</h1>
+    <h1 itemprop="name">目标任务</h1>
     
      
-           <p itemprop="description" >条件概率在同一个样本空间Ω中的事件或者子集A与B，如果随机从Ω中选出的一个元素属于B，那么这个随机选择的元素还属于A的概率就定义为在B的前提下A的条件概率。从这个定义中，我们可以得出
-\\(P(A|B) = |A∩B|/|B|\\)
-分子、分母都除以|Ω|得到
-\({\displ</p>
+           <p itemprop="description" >1.高斯消元2.概率dp3.母函数4.主席树5.极角排序6.二分7.三分8.倍增9.FFT10.置换群</p>
         
     
     <time datetime="2016-07-18T16:00:00.000Z" itemprop="datePublished">2016-07-19</time>
@@ -186,13 +207,15 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/19/算法目录/" title="算法目录" itemprop="url">
+    <a href="/2016/07/19/概率与期望/" title="概率与期望总结" itemprop="url">
   
-    <h1 itemprop="name">算法目录</h1>
+    <h1 itemprop="name">概率与期望总结</h1>
     
      
-           <p itemprop="description" >基础算法1.模拟2.乱搞3.贪心
-搜索1.普通搜索    1.BFS    2.DFS    3.双向BFS2.搜索优化    1.可行性剪枝    2.最优性剪枝    3.分支定界    4.meet in the middle3.智能搜索    1.A*搜索    2.粒子</p>
+           <p itemprop="description" >条件概率在同一个样本空间Ω中的事件或者子集A与B，如果随机从Ω中选出的一个元素属于B，那么这个随机选择的元素还属于A的概率就定义为在B的前提下A的条件概率。从这个定义中，我们可以得出
+\\(P(A|B) = |A∩B|/|B|\\)
+分子、分母都除以|Ω|得到
+\({\displ</p>
         
     
     <time datetime="2016-07-18T16:00:00.000Z" itemprop="datePublished">2016-07-19</time>
@@ -261,28 +284,6 @@ tags按照比赛进行关键字标记。</p>
         
     
     <time datetime="2016-07-16T16:00:00.000Z" itemprop="datePublished">2016-07-17</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/11/POJ1321/" title="POJ1321 棋盘问题" itemprop="url">
-  
-    <h1 itemprop="name">POJ1321 棋盘问题</h1>
-    
-     
-           <p itemprop="description" >题意在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，求方法数
-分析相当于对棋盘的每一个可放点开始往后枚举，一个有效的剪枝是
-每次搜索第num个棋子可选择的位置时，只用搜从当前行的下一行到n-（num-</p>
-        
-    
-    <time datetime="2016-07-10T16:00:00.000Z" itemprop="datePublished">2016-07-11</time>
   </a>
 </section>
 

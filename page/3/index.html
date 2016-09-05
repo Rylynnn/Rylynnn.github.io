@@ -78,6 +78,28 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
+    <a href="/2016/07/11/POJ1321/" title="POJ1321 棋盘问题" itemprop="url">
+  
+    <h1 itemprop="name">POJ1321 棋盘问题</h1>
+    
+     
+           <p itemprop="description" >题意在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，求方法数
+分析相当于对棋盘的每一个可放点开始往后枚举，一个有效的剪枝是
+每次搜索第num个棋子可选择的位置时，只用搜从当前行的下一行到n-（num-</p>
+        
+    
+    <time datetime="2016-07-10T16:00:00.000Z" itemprop="datePublished">2016-07-11</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
     <a href="/2016/07/11/傻逼错集锦/" title="傻逼错集锦" itemprop="url">
   
     <h1 itemprop="name">傻逼错集锦</h1>
@@ -144,15 +166,17 @@ Bi=(Bi-1)^2-1 P=10^9+7
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/05/14/ZOJ2657/" title="ZOJ2657 Appointment" itemprop="url">
+    <a href="/2016/05/14/SGU106/" title="SGU106" itemprop="url">
   
-    <h1 itemprop="name">ZOJ2657 Appointment</h1>
+    <h1 itemprop="name">SGU106</h1>
     
      
            <p itemprop="description" >原题
-题意和青蛙的约会一样的题意,就是注意周期要是正的。
-分析一样的分析点链接去看啦，懒得写啦，不过ZOJ要用lld也是醉了。。。。wa了好久。
-1234567891011121314151617181920212223242526272829303132333435363738</p>
+题意满足
+ax+by+c = 0
+的x和y在(x1,x2)和(y1,y2)范围内的有多少组解
+分析照旧c放到方程右边，然后首先要分类讨论
+1.a==0 &amp;amp;&amp;amp; b==02.a==0 &amp;amp;&amp;amp; b!=03.a!-0 &amp;amp;&amp;amp; b==04.</p>
         
     
     <time datetime="2016-05-13T16:00:00.000Z" itemprop="datePublished">2016-05-14</time>
@@ -167,17 +191,15 @@ Bi=(Bi-1)^2-1 P=10^9+7
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/05/14/SGU106/" title="SGU106" itemprop="url">
+    <a href="/2016/05/14/ZOJ2657/" title="ZOJ2657 Appointment" itemprop="url">
   
-    <h1 itemprop="name">SGU106</h1>
+    <h1 itemprop="name">ZOJ2657 Appointment</h1>
     
      
            <p itemprop="description" >原题
-题意满足
-ax+by+c = 0
-的x和y在(x1,x2)和(y1,y2)范围内的有多少组解
-分析照旧c放到方程右边，然后首先要分类讨论
-1.a==0 &amp;amp;&amp;amp; b==02.a==0 &amp;amp;&amp;amp; b!=03.a!-0 &amp;amp;&amp;amp; b==04.</p>
+题意和青蛙的约会一样的题意,就是注意周期要是正的。
+分析一样的分析点链接去看啦，懒得写啦，不过ZOJ要用lld也是醉了。。。。wa了好久。
+1234567891011121314151617181920212223242526272829303132333435363738</p>
         
     
     <time datetime="2016-05-13T16:00:00.000Z" itemprop="datePublished">2016-05-14</time>
@@ -237,31 +259,6 @@ ax+by+c = 0
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/05/01/POJ1061/" title="POJ1061 青蛙的约会" itemprop="url">
-  
-    <h1 itemprop="name">POJ1061 青蛙的约会</h1>
-    
-     
-           <p itemprop="description" >原题
-题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
-分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解
-(x+pm)-(y+pn)=kl   
-p(n-m)+kl=x-y
-wa1:gc</p>
-        
-    
-    <time datetime="2016-04-30T16:00:00.000Z" itemprop="datePublished">2016-05-01</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
     <a href="/2016/05/01/POJ2115/" title="POJ2115 C Looooops" itemprop="url">
   
     <h1 itemprop="name">POJ2115 C Looooops</h1>
@@ -289,16 +286,17 @@ C*x-2^k*y=B-A
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/05/01/HDU4497/" title="HDU4497 GCD and LCM" itemprop="url">
+    <a href="/2016/05/01/POJ1061/" title="POJ1061 青蛙的约会" itemprop="url">
   
-    <h1 itemprop="name">HDU4497 GCD and LCM</h1>
+    <h1 itemprop="name">POJ1061 青蛙的约会</h1>
     
      
            <p itemprop="description" >原题
-题意已知三个数x,y,z的gcd和lcm，求有多少种可能性。
-分析
-若lcm%gcd！=0，则不存在任何可能性。
-若lcm%gcd==0：令d=lcm/gcd，对d进行唯一分解：d = p1^a1  p2^a2  p3^a3 ……若要满足这样的条件，x,y,z每个数首先要满</p>
+题意青蛙1从x开始跳，每次跳m，青蛙2从y开始跳，每次跳n，环行线总长L
+分析裸的二元一次不定方程，如果两个青蛙的步数相同，则永远不可能，若(x-y)%gcd(n-m,l)!=0则永无正整数解
+(x+pm)-(y+pn)=kl   
+p(n-m)+kl=x-y
+wa1:gc</p>
         
     
     <time datetime="2016-04-30T16:00:00.000Z" itemprop="datePublished">2016-05-01</time>
