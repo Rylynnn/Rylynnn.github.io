@@ -4,32 +4,23 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
   
-    <title>HDU1026 Ignatius and the Princess I | Rylynnn</title>
+    <title>快速幂与快速乘模板 | Rylynnn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Rylynnn">
     
 
     
-    <meta name="description" content="原题
-题意一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。
-分析一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。
-1234567891011121314151617181920212223242">
+    <meta name="description" content="1234567891011121314151617181920212223242526ll mul_mod(ll a,ll b,ll m)&amp;#123;    ll ans=0;    a%=m;    while(b&amp;gt;0)&amp;#123;        if(b&amp;amp;1)&amp;#123;            ans+=a;            ans%=m;        &amp;#125;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU1026 Ignatius and the Princess I">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/HDU1026/index.html">
+<meta property="og:title" content="快速幂与快速乘模板">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/快速乘和快速幂模板/index.html">
 <meta property="og:site_name" content="Rylynnn">
-<meta property="og:description" content="原题
-题意一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。
-分析一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。
-1234567891011121314151617181920212223242">
-<meta property="og:updated_time" content="2016-07-25T07:39:32.153Z">
+<meta property="og:description" content="1234567891011121314151617181920212223242526ll mul_mod(ll a,ll b,ll m)&amp;#123;    ll ans=0;    a%=m;    while(b&amp;gt;0)&amp;#123;        if(b&amp;amp;1)&amp;#123;            ans+=a;            ans%=m;        &amp;#125;">
+<meta property="og:updated_time" content="2016-09-08T18:50:39.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU1026 Ignatius and the Princess I">
-<meta name="twitter:description" content="原题
-题意一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。
-分析一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。
-1234567891011121314151617181920212223242">
+<meta name="twitter:title" content="快速幂与快速乘模板">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526ll mul_mod(ll a,ll b,ll m)&amp;#123;    ll ans=0;    a%=m;    while(b&amp;gt;0)&amp;#123;        if(b&amp;amp;1)&amp;#123;            ans+=a;            ans%=m;        &amp;#125;">
 
     
     <link rel="alternative" href="/atom.xml" title="Rylynnn" type="application/atom+xml">
@@ -89,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/25/HDU1026/" title="HDU1026 Ignatius and the Princess I" itemprop="url">HDU1026 Ignatius and the Princess I</a>
+      <a href="/2016/09/09/快速乘和快速幂模板/" title="快速幂与快速乘模板" itemprop="url">快速幂与快速乘模板</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Rylynnn" target="_blank" itemprop="author">Rylynnn</a>
 		
   <p class="article-time">
-    <time datetime="2016-07-24T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-07-25</time>
+    <time datetime="2016-09-08T16:00:00.000Z" itemprop="datePublished"> 发表于 2016-09-09</time>
     
   </p>
 </header>
@@ -105,14 +96,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1026" target="_blank" rel="external">原题</a></p>
-<h2 id="u9898_u610F"><a href="#u9898_u610F" class="headerlink" title="题意"></a>题意</h2><p>一个棋盘可以走十字，棋盘为‘X’不能走，为‘.’可以走，为数字n则需要多花ns打败怪兽才能走。问从左上到右下的最短时间。</p>
-<h2 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h2><p>一个傻逼的BFS写了一天！！！然后一怒之下重写了一遍，然后就ac了。。。MDZZ<br>主要还是之前那个的结构体之类的设置的太复杂了唉。。。而且这次就深刻理解了dijkstra就是BFS嘛。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> INF <span class="number">0x3f3f3f3f</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> node&#123;</span><br><span class="line">    <span class="keyword">int</span> x,y,prex,prey;</span><br><span class="line">    <span class="keyword">char</span> val;</span><br><span class="line">    <span class="keyword">int</span> time;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node&amp; b)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> time&gt;b.time;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;knight;</span><br><span class="line">knight peo[<span class="number">107</span>][<span class="number">107</span>],now,nn;</span><br><span class="line"><span class="built_in">string</span> a[<span class="number">107</span>];</span><br><span class="line"><span class="keyword">int</span> mov[<span class="number">4</span>][<span class="number">2</span>]=&#123;-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> p,n,m,num;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">    priority_queue&lt;knight&gt;q;</span><br><span class="line">    peo[<span class="number">0</span>][<span class="number">0</span>].time=<span class="number">0</span>;</span><br><span class="line">    q.push(peo[<span class="number">0</span>][<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        now=q.top();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(now.x==n-<span class="number">1</span>&amp;&amp;now.y==m-<span class="number">1</span>)&#123;</span><br><span class="line">            p=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            nn.x=now.x+mov[i][<span class="number">0</span>];</span><br><span class="line">            nn.y=now.y+mov[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(nn.x&gt;=<span class="number">0</span>&amp;&amp;nn.x&lt;n&amp;&amp;nn.y&gt;=<span class="number">0</span>&amp;&amp;nn.y&lt;m&amp;&amp;a[nn.x][nn.y]==<span class="string">'.'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(peo[nn.x][nn.y].time&gt;peo[now.x][now.y].time+<span class="number">1</span>)&#123;</span><br><span class="line">                    peo[nn.x][nn.y].time=peo[now.x][now.y].time+<span class="number">1</span>;</span><br><span class="line">                    <span class="comment">//cout&lt;&lt;peo[nn.x][nn.y].time&lt;&lt;endl;</span></span><br><span class="line">                    peo[nn.x][nn.y].prex=now.x;</span><br><span class="line">                    peo[nn.x][nn.y].prey=now.y;</span><br><span class="line">                    q.push(peo[nn.x][nn.y]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nn.x&gt;=<span class="number">0</span>&amp;&amp;nn.x&lt;n&amp;&amp;nn.y&gt;=<span class="number">0</span>&amp;&amp;nn.y&lt;m&amp;&amp;a[nn.x][nn.y]&gt;=<span class="string">'1'</span>&amp;&amp;a[nn.x][nn.y]&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(peo[nn.x][nn.y].time&gt;peo[now.x][now.y].time+a[nn.x][nn.y]-<span class="string">'0'</span>+<span class="number">1</span>)&#123;</span><br><span class="line">                    peo[nn.x][nn.y].time=peo[now.x][now.y].time+a[nn.x][nn.y]-<span class="string">'0'</span>+<span class="number">1</span>;</span><br><span class="line">                    <span class="comment">//cout&lt;&lt;peo[nn.x][nn.y].time&lt;&lt;endl;</span></span><br><span class="line">                    peo[nn.x][nn.y].prex=now.x;</span><br><span class="line">                    peo[nn.x][nn.y].prey=now.y;</span><br><span class="line">                    q.push(peo[nn.x][nn.y]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">0</span>&amp;&amp;j==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(peo[i][j].prex,peo[i][j].prey);</span><br><span class="line">    <span class="keyword">if</span>(a[i][j]==<span class="string">'.'</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%ds:(%d,%d)-&gt;(%d,%d)\n"</span>,peo[i][j].time,peo[i][j].prex,peo[i][j].prey,i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(a[i][j]&gt;=<span class="string">'1'</span>&amp;&amp;a[i][j]&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">        num=a[i][j]-<span class="string">'0'</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%ds:(%d,%d)-&gt;(%d,%d)\n"</span>,peo[i][j].time-num,peo[i][j].prex,peo[i][j].prey,i,j);</span><br><span class="line">        <span class="keyword">while</span>(--num&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%ds:FIGHT AT (%d,%d)\n"</span>,peo[i][j].time-num,i,j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m)!=EOF)&#123;</span><br><span class="line">        p=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++)&#123;</span><br><span class="line">                peo[i][j].x=peo[i][j].prex=i;</span><br><span class="line">                peo[i][j].y=peo[i][j].prey=j;</span><br><span class="line">                peo[i][j].val=a[i][j];</span><br><span class="line">                peo[i][j].time=INF;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        bfs();</span><br><span class="line">        <span class="keyword">if</span>(p==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"It takes %d seconds to reach the target position, let me show you the way.\n"</span>,peo[n-<span class="number">1</span>][m-<span class="number">1</span>].time);</span><br><span class="line">            dfs(n-<span class="number">1</span>,m-<span class="number">1</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"FINISH\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"God please help our poor hero.\n"</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"FINISH\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">mul_mod</span><span class="params">(ll a,ll b,ll m)</span></span>&#123;</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    a%=m;</span><br><span class="line">    <span class="keyword">while</span>(b&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)&#123;</span><br><span class="line">            ans+=a;</span><br><span class="line">            ans%=m;</span><br><span class="line">        &#125;</span><br><span class="line">        b=b&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        a+=a;</span><br><span class="line">        a%=m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">pow_mod</span><span class="params">(ll a,ll b,ll m)</span></span>&#123;</span><br><span class="line">    ll ans=<span class="number">1</span>;</span><br><span class="line">    a%=m;</span><br><span class="line">    <span class="keyword">while</span>(b&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>)&#123;</span><br><span class="line">            ans=mul_mod(ans,a,m)%m;</span><br><span class="line">        &#125;</span><br><span class="line">        b=b&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        a=mul_mod(a,a,m)%m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -120,13 +108,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categorie/搜索/">搜索</a>►<a class="article-category-link" href="/categorie/搜索/普通搜索/">普通搜索</a>►<a class="article-category-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a>
+  <a class="article-category-link" href="/categorie/数学/">数学</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/HDU/">HDU</a>
+  <span></span> <a href="/tags/Templates/">Templates</a>
   </div>
 
 </div>
@@ -135,7 +123,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/07/25/HDU1026/" data-title="HDU1026 Ignatius and the Princess I | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/09/09/快速乘和快速幂模板/" data-title="快速幂与快速乘模板 | Rylynnn" data-tsina="Rylynnn_活活被校赛累死了w" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -148,19 +136,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/28/Codevs1098/" title="Codevs 1098 均分纸牌">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Codevs 1098 均分纸牌</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/07/24/HDU1548/"  title="HDU1548 A strange lift">
+<a href="/2016/09/09/POJ1845/"  title="POJ1845 Sumdiv">
  <strong>下一篇：</strong><br/> 
- <span>HDU1548 A strange lift
+ <span>POJ1845 Sumdiv
 </span>
 </a>
 </div>
@@ -169,7 +149,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/07/25/HDU1026/" data-title="HDU1026 Ignatius and the Princess I" data-url="http://yoursite.com/2016/07/25/HDU1026/"></div>
+	<div class="ds-thread" data-thread-key="2016/09/09/快速乘和快速幂模板/" data-title="快速幂与快速乘模板" data-url="http://yoursite.com/2016/09/09/快速乘和快速幂模板/"></div>
 </section>
 
 
@@ -179,7 +159,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9898_u610F"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li></ol>
+ 
  
   </div>
 

@@ -11,7 +11,7 @@
     
 
     
-    <meta name="description" content="素数筛埃拉特斯托尼筛时间复杂度 O(NloglogN)
+    <meta name="description" content="线性筛埃拉特斯托尼筛时间复杂度 O(NloglogN)
 空间复杂度 O(N)
 欧拉筛时间复杂度 O(N)
 空间复杂度 O(N)
@@ -24,7 +24,7 @@
 <meta property="og:title" content="欧拉函数和欧拉筛">
 <meta property="og:url" content="http://yoursite.com/2016/04/30/数论/index.html">
 <meta property="og:site_name" content="Rylynnn">
-<meta property="og:description" content="素数筛埃拉特斯托尼筛时间复杂度 O(NloglogN)
+<meta property="og:description" content="线性筛埃拉特斯托尼筛时间复杂度 O(NloglogN)
 空间复杂度 O(N)
 欧拉筛时间复杂度 O(N)
 空间复杂度 O(N)
@@ -33,10 +33,10 @@
 设合数𝑛最小的质因数为𝑝，它的另一个大于𝑝的质因数为𝑝′，令
      𝑛 = 𝑝𝑚 = 𝑝′𝑚′
 观察上面的程序逻辑，可以发现𝑗循环到质因数𝑝时合数𝑛第一次被标记，若也被𝑝′标记，则是在这之前（因为𝑚′ &amp;lt; 𝑚），">
-<meta property="og:updated_time" content="2016-07-19T01:54:20.696Z">
+<meta property="og:updated_time" content="2016-09-07T18:08:21.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="欧拉函数和欧拉筛">
-<meta name="twitter:description" content="素数筛埃拉特斯托尼筛时间复杂度 O(NloglogN)
+<meta name="twitter:description" content="线性筛埃拉特斯托尼筛时间复杂度 O(NloglogN)
 空间复杂度 O(N)
 欧拉筛时间复杂度 O(N)
 空间复杂度 O(N)
@@ -120,11 +120,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u7D20_u6570_u7B5B"><span class="toc-number">1.</span> <span class="toc-text">素数筛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B"><span class="toc-number">1.1.</span> <span class="toc-text">埃拉特斯托尼筛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6B27_u62C9_u7B5B"><span class="toc-number">1.2.</span> <span class="toc-text">欧拉筛</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u79EF_u6027_u51FD_u6570"><span class="toc-number">2.</span> <span class="toc-text">积性函数</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u7EBF_u6027_u7B5B"><span class="toc-number">1.</span> <span class="toc-text">线性筛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B"><span class="toc-number">1.1.</span> <span class="toc-text">埃拉特斯托尼筛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6B27_u62C9_u7B5B"><span class="toc-number">1.2.</span> <span class="toc-text">欧拉筛</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u79EF_u6027_u51FD_u6570"><span class="toc-number">2.</span> <span class="toc-text">积性函数</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="u7D20_u6570_u7B5B"><a href="#u7D20_u6570_u7B5B" class="headerlink" title="素数筛"></a>素数筛</h1><h2 id="u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B"><a href="#u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B" class="headerlink" title="埃拉特斯托尼筛"></a>埃拉特斯托尼筛</h2><pre><code>时间复杂度 O(NloglogN)
+		<h1 id="u7EBF_u6027_u7B5B"><a href="#u7EBF_u6027_u7B5B" class="headerlink" title="线性筛"></a>线性筛</h1><h2 id="u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B"><a href="#u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B" class="headerlink" title="埃拉特斯托尼筛"></a>埃拉特斯托尼筛</h2><pre><code>时间复杂度 O(NloglogN)
 空间复杂度 O(N)
 </code></pre><h2 id="u6B27_u62C9_u7B5B"><a href="#u6B27_u62C9_u7B5B" class="headerlink" title="欧拉筛"></a>欧拉筛</h2><pre><code>时间复杂度 O(N)
 空间复杂度 O(N)
@@ -133,7 +133,8 @@
 设合数𝑛最小的质因数为𝑝，它的另一个大于𝑝的质因数为𝑝′，令
      𝑛 = 𝑝𝑚 = 𝑝′𝑚′
 观察上面的程序逻辑，可以发现𝑗循环到质因数𝑝时合数𝑛第一次被标记，若也被𝑝′标记，则是在这之前（因为𝑚′ &lt; 𝑚），考虑𝑖循环到𝑚′，注意到𝑛 = 𝑝𝑚 = 𝑝′𝑚′且𝑝, 𝑝′为不同的质数，因此𝑝|𝑚′，所以当𝑗循环到质数𝑝后结束，不会循环到𝑝′，这就说明不会被𝑝′筛去。
-</code></pre><h1 id="u79EF_u6027_u51FD_u6570"><a href="#u79EF_u6027_u51FD_u6570" class="headerlink" title="积性函数"></a>积性函数</h1><p>考虑一个定义域为N+的函数𝑓，对于任意两个<em>互质</em>的正整数𝑎, 𝑏，均满足𝑓(𝑎𝑏)=𝑓(𝑎)𝑓(𝑏)，则函数𝑓被称为积性函数。<br><br>假如对于任意两个正整数𝑎, 𝑏，都有𝑓(𝑎𝑏)=𝑓(𝑎)𝑓(𝑏)，函数𝑓也被称为完全积性函数。<br><br>容易看出，对于任意积性函数（完全积性函数），𝑓(1) = 1。<br>考虑一个大于1的正整数𝑁，设</p>
+</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">50000009</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll check[MAXN],prime[MAXN];</span><br><span class="line"><span class="function">ll <span class="title">getprime</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll tot=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(check,<span class="literal">false</span>,<span class="keyword">sizeof</span>(check));</span><br><span class="line">    check[<span class="number">0</span>]=check[<span class="number">1</span>]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!check[i])&#123;</span><br><span class="line">            prime[tot++]=i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i&lt;&lt;<span class="number">1</span>;j&lt;MAXN;j+=i)&#123;</span><br><span class="line">                check[j]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">getprime_Euler</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll tot=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(check,<span class="literal">false</span>,<span class="keyword">sizeof</span>(check));</span><br><span class="line">    check[<span class="number">0</span>]=check[<span class="number">1</span>]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!check[i])&#123;</span><br><span class="line">            prime[tot++]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;tot;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i*prime[j]&gt;MAXN)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            check[i*prime[j]]=<span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    ll a,b;</span><br><span class="line">    a=getprime_Euler();</span><br><span class="line">    b=getprime();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="u79EF_u6027_u51FD_u6570"><a href="#u79EF_u6027_u51FD_u6570" class="headerlink" title="积性函数"></a>积性函数</h1><p>考虑一个定义域为N+的函数𝑓，对于任意两个<em>互质</em>的正整数𝑎, 𝑏，均满足𝑓(𝑎𝑏)=𝑓(𝑎)𝑓(𝑏)，则函数𝑓被称为积性函数。<br><br>假如对于任意两个正整数𝑎, 𝑏，都有𝑓(𝑎𝑏)=𝑓(𝑎)𝑓(𝑏)，函数𝑓也被称为完全积性函数。<br><br>容易看出，对于任意积性函数（完全积性函数），𝑓(1) = 1。<br>考虑一个大于1的正整数𝑁，设</p>
 <pre><code>𝑁 = 𝑝𝑖𝛼𝑖
 </code></pre><p>其中𝑝𝑖为互不相同的质数，那么对于一个积性函数𝑓，𝑓(𝑁)=𝑓(𝑝𝑖^𝛼𝑖)= 𝑓(𝑝𝑖)^𝛼𝑖<br>rane如果𝑓还满足完全积<br>性，则𝑓 𝑁 = 𝑓 𝑝𝑖</p>
   
@@ -149,7 +150,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/学习笔记/">学习笔记</a>
+  <span></span> <a href="/tags/Templates/">Templates</a><a href="/tags/学习笔记/">学习笔记</a>
   </div>
 
 </div>
@@ -202,7 +203,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u7D20_u6570_u7B5B"><span class="toc-number">1.</span> <span class="toc-text">素数筛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B"><span class="toc-number">1.1.</span> <span class="toc-text">埃拉特斯托尼筛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6B27_u62C9_u7B5B"><span class="toc-number">1.2.</span> <span class="toc-text">欧拉筛</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u79EF_u6027_u51FD_u6570"><span class="toc-number">2.</span> <span class="toc-text">积性函数</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u7EBF_u6027_u7B5B"><span class="toc-number">1.</span> <span class="toc-text">线性筛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#u57C3_u62C9_u7279_u65AF_u6258_u5C3C_u7B5B"><span class="toc-number">1.1.</span> <span class="toc-text">埃拉特斯托尼筛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6B27_u62C9_u7B5B"><span class="toc-number">1.2.</span> <span class="toc-text">欧拉筛</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u79EF_u6027_u51FD_u6570"><span class="toc-number">2.</span> <span class="toc-text">积性函数</span></a></li></ol>
  
   </div>
 
@@ -223,7 +224,7 @@
   
 <div class="category-block">
   <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/">字符串</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/后缀数组/">后缀数组</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉函数/">欧拉函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/逆元/">逆元</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/逆元和欧拉函数/">逆元和欧拉函数</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/">群论</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/置换群/">置换群</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/">计算几何</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/向量/">向量</a><span class="category-list-count">1</span></li></ul></li></ul>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categorie/Daily/">Daily</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/">动态规划</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/动态规划/基础DP/">基础DP</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/">基础算法</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/模拟/">模拟</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/基础算法/贪心/">贪心</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/">字符串</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/字符串/后缀数组/">后缀数组</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/">搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/">普通搜索</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/BFS/">BFS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/搜索/普通搜索/DFS/">DFS</a><span class="category-list-count">3</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/">数学</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/">其他</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/">快速幂</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/其他/快速幂/矩阵快速幂/">矩阵快速幂</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/">数论</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/GCD和Extended-GCD/">GCD和Extended_GCD</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/不定方程/">不定方程</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉函数/">欧拉函数</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/欧拉定理/">欧拉定理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/素数筛/">素数筛</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/逆元/">逆元</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/数论/逆元和欧拉函数/">逆元和欧拉函数</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/概率论/">概率论</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/">线性代数</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/线性代数/矩阵乘法/">矩阵乘法</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/">组合数学</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/">群论</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/群论/置换群/">置换群</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/">计数原理</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/容斥原理/">容斥原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数学/组合数学/计数原理/生成函数/">生成函数</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/">数据结构</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/">线性表</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/数据结构/线性表/树状数组/">树状数组</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/">计算几何</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categorie/计算几何/向量/">向量</a><span class="category-list-count">1</span></li></ul></li></ul>
 </div>
 
 
@@ -241,15 +242,15 @@
 			
 		
 			
+				<li><a href="/tags/POJ/" title="POJ">POJ<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Templates/" title="Templates">Templates<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/USACO/" title="USACO">USACO<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/POJ/" title="POJ">POJ<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/2014Muti-9/" title="2014Muti 9">2014Muti 9<sup>3</sup></a></li>
 			
 		
 			
@@ -257,11 +258,19 @@
 			
 		
 			
+				<li><a href="/tags/2014Muti-9/" title="2014Muti 9">2014Muti 9<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/SWERC-2011/" title="SWERC 2011">SWERC 2011<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Templates/" title="Templates">Templates<sup>1</sup></a></li>
+				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UVA/" title="UVA">UVA<sup>1</sup></a></li>
 			
 		
 			
@@ -269,15 +278,11 @@
 			
 		
 			
-				<li><a href="/tags/ZOJ/" title="ZOJ">ZOJ<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/2016Muti-4/" title="2016Muti 4">2016Muti 4<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/SGU/" title="SGU">SGU<sup>1</sup></a></li>
+				<li><a href="/tags/ZOJ/" title="ZOJ">ZOJ<sup>1</sup></a></li>
 			
 		
 			
@@ -290,10 +295,6 @@
 		
 			
 				<li><a href="/tags/2013-通化邀请赛/" title="2013 通化邀请赛">2013 通化邀请赛<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/UVA/" title="UVA">UVA<sup>1</sup></a></li>
 			
 		
 			
