@@ -78,13 +78,12 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/04/21/usaco1.3.2barn1/" title="USACO1.3.2barn1" itemprop="url">
+    <a href="/2016/04/21/CF319B/" title="CF Round319" itemprop="url">
   
-    <h1 itemprop="name">USACO1.3.2barn1</h1>
+    <h1 itemprop="name">CF Round319</h1>
     
      
-           <p itemprop="description" >题目有m个牛棚，有n个牛，住在不同的牛棚（不住满），要用k个木板封住所有有牛的牛棚，问木板的最小长度
-分析贪心：显然，当所有木板均被用上时，长度最短（数量最多）（证明….）。 正向思维，初始状态有c块木板，每块木板只盖住一个牛棚。由c块倒推至m块木板，每次寻找这样的两个牛棚：其间</p>
+           <p itemprop="description" ></p>
         
     
     <time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
@@ -99,12 +98,13 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/04/21/CF319B/" title="CF Round319" itemprop="url">
+    <a href="/2016/04/21/usaco1.3.2barn1/" title="USACO1.3.2barn1" itemprop="url">
   
-    <h1 itemprop="name">CF Round319</h1>
+    <h1 itemprop="name">USACO1.3.2barn1</h1>
     
      
-           <p itemprop="description" ></p>
+           <p itemprop="description" >题目有m个牛棚，有n个牛，住在不同的牛棚（不住满），要用k个木板封住所有有牛的牛棚，问木板的最小长度
+分析贪心：显然，当所有木板均被用上时，长度最短（数量最多）（证明….）。 正向思维，初始状态有c块木板，每块木板只盖住一个牛棚。由c块倒推至m块木板，每次寻找这样的两个牛棚：其间</p>
         
     
     <time datetime="2016-04-20T16:00:00.000Z" itemprop="datePublished">2016-04-21</time>
@@ -164,15 +164,14 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/04/10/HDU4965/" title="HDU4965 Fast Matrix Calculation" itemprop="url">
+    <a href="/2016/04/10/HDU4970/" title="HDU4970 Killing Monsters" itemprop="url">
   
-    <h1 itemprop="name">HDU4965 Fast Matrix Calculation</h1>
+    <h1 itemprop="name">HDU4970 Killing Monsters</h1>
     
      
            <p itemprop="description" >原题
-题意对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
-分析直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
-1234</p>
+题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
+分析区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从</p>
         
     
     <time datetime="2016-04-10T14:17:00.000Z" itemprop="datePublished">2016-04-10</time>
@@ -187,14 +186,15 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/04/10/HDU4970/" title="HDU4970 Killing Monsters" itemprop="url">
+    <a href="/2016/04/10/HDU4965/" title="HDU4965 Fast Matrix Calculation" itemprop="url">
   
-    <h1 itemprop="name">HDU4970 Killing Monsters</h1>
+    <h1 itemprop="name">HDU4965 Fast Matrix Calculation</h1>
     
      
            <p itemprop="description" >原题
-题意塔防游戏模拟，给定数目的攻击塔，给定的范围和给定的攻击，有一些怪，有自己的生命值和出现点，计算到终点有多少怪没有被杀死
-分析区间更新，直接树状数组，其实普通数组模拟也可以的，嘛无所谓了，树状数组也挺好写的，然后把给定范围和攻击处理完之后，直接倒着从终点往前，预处理出来从</p>
+题意对两个最大61000的矩阵A,B，做(AB)^(N*N)%6处理，然后求新矩阵的所有元素的和。
+分析直接做快速幂也会爆炸,O（N^3）*快速幂的复杂度，所以但是可以把(A×B)^(n×n)，换成求A×(B×A)^(n×n-1)×B，直接变成6×6的矩阵快速幂。
+1234</p>
         
     
     <time datetime="2016-04-10T14:17:00.000Z" itemprop="datePublished">2016-04-10</time>

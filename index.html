@@ -141,14 +141,14 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/09/04/Gym100851G/" title="Gym 100851G Generators" itemprop="url">
+    <a href="/2016/09/04/HDU4196/" title="HDU4196 Remoteland" itemprop="url">
   
-    <h1 itemprop="name">Gym 100851G Generators</h1>
+    <h1 itemprop="name">HDU4196 Remoteland</h1>
     
      
            <p itemprop="description" >原题
-题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
-分析首先：这个数列给出x_0,a,b,c四个参数，有$$x_{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循</p>
+题意给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数
+分析首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/</p>
         
     
     <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time>
@@ -163,14 +163,14 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/09/04/HDU4196/" title="HDU4196 Remoteland" itemprop="url">
+    <a href="/2016/09/04/Gym100851G/" title="Gym 100851G Generators" itemprop="url">
   
-    <h1 itemprop="name">HDU4196 Remoteland</h1>
+    <h1 itemprop="name">Gym 100851G Generators</h1>
     
      
            <p itemprop="description" >原题
-题意给定一个n,然后让你从1-n中选出某些数乘起来，使得乘积最大，并且乘积必须是完全平方数
-分析首先我们预处理出来1e7以内的所有素数，并且预处理出，n在1e7以内的所有n!的结果，存在fac[n]中。根据n!素因子分解中素数p的幂为 [n/p]+[n/(p^2)]+[n/</p>
+题意给定n个数列，给你一个k，问从每个数列中取一个数，这些数的和，满足mod k不等于0，且这个和的值最大为多少？
+分析首先：这个数列给出x_0,a,b,c四个参数，有$$x_{n+1}=(ax_n+b)\%c$$定会形成循环节，但要注意的是*这个循环节可能前几个数值不在循</p>
         
     
     <time datetime="2016-09-03T16:00:00.000Z" itemprop="datePublished">2016-09-04</time>
@@ -227,34 +227,12 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/07/28/HDU5769/" title="HDU5769 Fast Matrix Calculation" itemprop="url">
+    <a href="/2016/07/28/Codevs1098/" title="Codevs 1098 均分纸牌" itemprop="url">
   
-    <h1 itemprop="name">HDU5769 Fast Matrix Calculation</h1>
+    <h1 itemprop="name">Codevs 1098 均分纸牌</h1>
     
      
-           <p itemprop="description" >原题
-题意给你一个字符和一个字符串，问这个字符串的所有子串中包含这个字符的字串有多少个。
-分析当时看到的第一想法就是后缀数组，奈何只是去年区域赛接触了一下，忘得差不多了，也没有系统的写过运用的专题，所以刚开始还想的是用后缀自动机这个字符跑后缀自动机，但是对于每个字串，是包含字符又</p>
-        
-    
-    <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/07/28/后缀数组/" title="后缀数组" itemprop="url">
-  
-    <h1 itemprop="name">后缀数组</h1>
-    
-     
-           <p itemprop="description" >定义后缀数组：后缀数组SA是一个一维数组，它保存1..n的某个排列SA[1]，SA[2]，……，SA[n]，并且保证 Suffix(SA[i])&amp;lt;Suffix(SA[i+1])。每个数组中存储的值为字典序为i的原字符串后缀在原串中的位置。</p>
+           <p itemprop="description" >题意有N堆纸牌，每堆上有若干张，但纸牌总数必为N的倍数。可以在任一堆上取若于张纸牌，然后移动。移牌规则为：在编号为 1 堆上取的纸牌，只能移到编号为 2 的堆上；在编号为 N 的堆上取的纸牌，只能移到编号为N-1的堆上；其他堆上取的纸牌，可以移到相邻左边或右边的堆上。现在要求找出</p>
         
     
     <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
@@ -279,6 +257,26 @@
 例如p=3,k=2的方案数有三种：
 f(0) = 0, f(1) = 1, f(2) = 2.  
 </p>
+        
+    
+    <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/07/28/后缀数组/" title="后缀数组" itemprop="url">
+  
+    <h1 itemprop="name">后缀数组</h1>
+    
+     
+           <p itemprop="description" >定义后缀数组：后缀数组SA是一个一维数组，它保存1..n的某个排列SA[1]，SA[2]，……，SA[n]，并且保证 Suffix(SA[i])&amp;lt;Suffix(SA[i+1])。每个数组中存储的值为字典序为i的原字符串后缀在原串中的位置。</p>
         
     
     <time datetime="2016-07-27T16:00:00.000Z" itemprop="datePublished">2016-07-28</time>
