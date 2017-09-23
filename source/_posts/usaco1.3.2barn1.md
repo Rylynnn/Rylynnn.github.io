@@ -2,10 +2,10 @@
 title: USACO1.3.2barn1
 date: 2016-04-21 
 categories:
-- USACO
+- 动态规划
+- 基础DP
 tags:
-- 贪心
-- 基本DP
+- USACO
 toc: true
 ---
 

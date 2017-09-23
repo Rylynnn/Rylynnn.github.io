@@ -2,11 +2,10 @@
 title: USACO1.1.4beads
 date: 2016-04-21 
 categories:
-- USACO
+- 动态规划
+- 基础DP
 tags:
 - USACO
-- 乱搞
-- 基本DP
 toc: true
 ---
 

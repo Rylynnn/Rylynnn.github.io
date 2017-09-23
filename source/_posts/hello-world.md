@@ -1,8 +1,8 @@
+---
 title: Hello World
 date: 2016-2-7 05:26:00   //在此处输入你编辑这篇文章的时间。
-categories: 学习笔记
+categories: Daily
 toc: true  //在此处设定是否开启目录，需要主题支持。
----
 ---
 
 

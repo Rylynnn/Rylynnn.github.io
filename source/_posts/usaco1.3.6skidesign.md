@@ -2,10 +2,10 @@
 title: USACO1.3.6skidesign
 date: 2016-06-01
 categories:
-- USACO
+- 基础算法
+- 贪心
 tags:
 - USACO
-- 贪心
 toc: true
 ---
 

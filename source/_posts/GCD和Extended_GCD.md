@@ -6,7 +6,6 @@ categories:
 - 数论
 - GCD和Extended_GCD
 tags:
-- 不定方程
 - 学习笔记
 toc: true
 ---
